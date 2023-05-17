@@ -1,0 +1,105 @@
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.page-container {
+  background-color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 20% 60% 20%;
+  height: 100vh;
+  width: 100vw;
+  font-family: Cabin;
+}
+
+/* TOP */
+
+.personal-logo {
+  width: 5em;
+}
+
+.email-container,  .personal-logo-container, .main-nav, .controls-container, .project-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-nav {
+  justify-content: space-between;
+}
+
+.email-icon {
+  width: 2em;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+
+.main-nav ul li {
+  list-style: none;
+}
+
+.nav-link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+/* MIDDLE */
+
+.project-image-container {
+  grid-column: span 2;
+}
+
+.project-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-description-container {
+  overflow-y: scroll;
+  grid-row: span 2;
+  margin: 0 0 2em 0;
+}
+
+.project-description {
+  margin: 0;
+  padding: 0 1em;
+  font-size: 1.75em;
+  opacity: 70%;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* BOTTOM */
+
+.project-title {
+  font-weight: normal;
+  font-size: 3em;
+}
+
+.controls-container {
+  justify-content: space-around;
+}
+
+.left-button, .right-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 1.5em;
+}
