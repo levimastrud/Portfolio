@@ -57,18 +57,35 @@ body {
   color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 1.5em;
+  transition: all .2s ease-in-out
+}
+
+.nav-link:hover {
+  opacity: 50%;
 }
 
 /* MIDDLE */
 
 .project-image-container {
   grid-column: span 2;
+  display: flex; 
+  overflow: hidden;
+  position: relative;
 }
 
 .project-image {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  position: absolute;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.4s ease-in-out;
+}
+
+.project-image.active {
+  transform: translateX(0%);
+  opacity: 1;
 }
 
 .project-description-container {

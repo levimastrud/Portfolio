@@ -1,11 +1,36 @@
 import './App.css';
+import { useState } from 'react';
+// Assets
 import personalLogo from './assets/levi-mas-trud-logo.svg'
 import mailIcon from './assets/mail-icon.svg'
 import arrowLeft from './assets/arrow.svg'
 import arrowRight from './assets/arrow-right.svg'
-import codeBuddy from './assets/codebuddy-extended.png'
+
+// Scripts
+import * as carousel from './CarouselLogic';
 
 function App() {
+
+  let [currentSlide, setCurrentSlide] = useState(0);
+
+  function nextProject() {
+    console.log(currentSlide);
+    if (currentSlide >= carousel.projects.length - 1) {
+      setCurrentSlide(0);
+    } else {
+      setCurrentSlide(currentSlide += 1);
+    }
+  }
+
+  function previousProject() {
+    console.log(currentSlide);
+    if (currentSlide <= 0) {
+      setCurrentSlide(carousel.projects.length - 1);
+    } else {
+      setCurrentSlide(currentSlide -= 1);
+    }
+  }
+
   return (
     <div className='page-container'>
       {/* Top */}
@@ -29,21 +54,28 @@ function App() {
         </div>
         {/* Middle */}
         <div className='project-image-container'>
-          <img className='project-image' src={codeBuddy} alt='project 1' />
+          {carousel.projects.map((project, index) => (
+            <img
+              key={index}
+              className={`project-image ${currentSlide === index ? 'active' : ''}`}
+              src={project.image}
+              alt={`project ${index + 1}`}
+            />
+          ))}
         </div>
         <div className='project-description-container'>
-          <h3 className='project-description'>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</h3>
+          <h3 className='project-description'>{carousel.projects[currentSlide].description}</h3>
         </div>
         {/* Bottom */}
         <div className='project-title-container'>
-          <h1 className='project-title'>CodeBuddy</h1>
+          <h1 className='project-title'>{carousel.projects[currentSlide].title}</h1>
         </div>
         <div className='controls-container'>
           <button className='left-button'>
-            <img src={arrowLeft} alt='left' onClick={() => console.log('click')}/>
+            <img src={arrowLeft} alt='left' onClick={previousProject} />
           </button>
           <button className='right-button'>
-            <img src={arrowRight} alt='left' onClick={() => console.log('click')}/>
+            <img src={arrowRight} alt='left' onClick={nextProject} />
           </button>
         </div>
       </div>
