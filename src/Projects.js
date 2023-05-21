@@ -1,9 +1,6 @@
 import './App.css';
 import { useState } from 'react';
 
-// Pages
-import Nav from './Nav';
-
 // Assets
 import personalLogo from './assets/levi-mas-trud-logo.svg'
 import mailIcon from './assets/mail-icon.svg'
