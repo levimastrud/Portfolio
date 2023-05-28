@@ -22,6 +22,7 @@
     align-items: flex-start;
     padding: 0 6em;
     overflow: hidden;
+    /* background-color: rgba(133, 133, 133, 0.267); */
 }
 
 .landing-wrapper h3 {
@@ -32,7 +33,7 @@
     font-size: 6em;
     font-family: Cabin;
     text-transform: uppercase;
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 0;
     margin: 0;
 }
@@ -40,10 +41,12 @@
 .trade-wrapper {
     display: flex;
     justify-content: space-between;
-    width: 50%;
-    font-size: 3em;
+    width: 30%;
+    font-size: 1.5em;
     font-family: Cabin;
     text-transform: uppercase;
+    color: rgb(255, 255, 255);
+
 }
 
 .social-link-wrapper {
@@ -54,7 +57,7 @@
 .social-link {
     height: 3em;
     width: 3em;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     margin: 0 .5em;
 }
 

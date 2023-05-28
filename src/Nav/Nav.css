@@ -8,11 +8,12 @@
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 5;
 }
 
 .nav-link a {
     padding: 0 2em;
-    color: black  !important;
+    color: rgb(255, 255, 255)  !important;
     text-decoration: none;
     font-family: Cabin;
 }
@@ -20,5 +21,5 @@
 .nav-handle {
     height: 2em;
     width: 4em;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
 }

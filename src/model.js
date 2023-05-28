@@ -3,13 +3,23 @@ import React, { useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { Environment, OrbitControls } from '@react-three/drei';
-import world from './assets/levi-v3.glb';
+import { Environment, OrbitControls, OrthographicCamera } from '@react-three/drei';
+
+//  V3 has red model
+// import world from './assets/levi-v3.glb';
+
+// V6 is in color
+// import world from './assets/levi-v6.glb';
+
+// V6 No Floor is in color
+import world from './assets/levi-v6-no-floor.glb';
 
 const Model = () => {
   const gltf = useLoader(GLTFLoader, world);
   const modelRef = useRef();
   const mixer = useRef();
+
+  console.log(gltf)
 
   // Play the "ArmatureAction" animation
   useFrame((state, delta) => {
@@ -41,17 +51,30 @@ const Model = () => {
   });
 
   return (
-    <primitive object={gltf.scene} scale={2} position={[2, -1, 0]} rotation={[0, 0, 0]} ref={modelRef} />
+    <primitive object={gltf.scene} scale={2.5} position={[0, -.7, 0]} rotation={[.8, 0, 0]} ref={modelRef} />
   );
 };
 
 export default function ModelViewer() {
   return (
-    <Canvas style={{ height: '100vh', position: 'absolute', top: 0, zIndex: -5 }}>
-      <ambientLight intensity={0.5} />
-      <directionalLight intensity={0.8} position={[5, 5, 5]} />
+    <Canvas orthographic camera={{ zoom: 150, position: [0, 0, 100] }} style={{ height: '100vh', position: 'absolute', top: 0, zIndex: -5 }}>
+      <ambientLight intensity={0.2} />
+      <directionalLight intensity={0.8} position={[5, 5, 15]} />
+      <pointLight position={[0, 20, 10]} intensity={0.75} color={0xc883e6} />
+      <pointLight position={[3, 0, 0]} intensity={0.75} color={0x83e6af} />
       <Suspense fallback={null}>
         <Model />
+        {/* <OrthographicCamera
+          makeDefault
+          zoom={150}
+          top={200}
+          bottom={-200}
+          left={200}
+          right={-200}
+          near={1}
+          far={2000}
+          position={[0, 0, 200]}
+        /> */}
       </Suspense>
     </Canvas>
   );

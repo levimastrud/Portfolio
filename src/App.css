@@ -6,6 +6,7 @@ background: linear-gradient(121deg, rgba(255,153,102,1) 0%, rgba(255,94,98,1) 86
 body {
   padding: 0;
   margin: 0;
+  background-color: rgb(53, 53, 53);
 }
 
 .page-container {
