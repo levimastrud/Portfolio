@@ -1,12 +1,27 @@
+#line {
+    width: 80px;
+    height: 80px;
+    background-color: #ff00005e;
+    position: fixed;
+}
+
+#path {
+    z-index: 999;
+    width: 100vw;
+    height: 20vh;
+    position: absolute;
+}
+
+
 .landing-wrapper {
     padding: 2em;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden;
     justify-content: flex-end;
     align-items: flex-start;
-    padding: 0 4em;
+    padding: 0 6em;
+    overflow: hidden;
 }
 
 .landing-wrapper h3 {
@@ -14,7 +29,7 @@
 }
 
 .title-name {
-    font-size: 10em;
+    font-size: 6em;
     font-family: Cabin;
     text-transform: uppercase;
     color: black;
