@@ -1,0 +1,100 @@
+img {
+    height: 5em;
+}
+
+.page-title-project {
+    color: white;
+    font-family: Cabin;
+    position: fixed;
+    top: 0;
+    left: 1em;
+    margin: .5em 0;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project-image {
+    height: 25em;
+    max-width: 50em;
+    width: 90%;
+    object-fit: cover;
+    margin: 1em;
+}
+
+.projects-and-description-wrapper {
+    display: grid;
+    grid-template-columns: 100% 0%;
+    transition: all .2s ease-in-out;
+    margin: 5em 0 0 0;
+    height: 100%;
+    overflow: visible;
+}
+
+.project-description {
+    background-color: rgb(34, 34, 34);
+    position: sticky;
+    top: 6em;
+    display: inline-block;
+    height: 40em;
+    overflow-y: scroll;
+}
+
+.description-text {
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.333);
+    padding: 2em 1em 1em 1em;
+    font-family: Cabin;
+
+    @media screen and (max-width: 980px) {
+        font-size: 1em;
+    }
+}
+
+.title-text {
+    padding: 0;
+    font-size: 2em;
+    color: white;
+    font-family: Cabin;
+
+    @media screen and (max-width: 980px) {
+        font-size: 1em;
+    }
+}
+
+.title-and-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgb(34, 34, 34);
+    width: 50%;
+}
+
+.close-description-btn {
+    color: white;
+    background-color: transparent;
+    border: none;
+    /* padding: 4em 0 0 3em; */
+    /* position: fixed; */
+    position: absolute;
+    left: 1em;
+    font-size: 1.5em;
+}
+
+.use-project-btn {
+    background-color: white;
+    font-family: Cabin;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    padding: 1em;
+    position: fixed;
+    bottom: 5em;
+    width: 50%;
+    text-align: center;
+  }

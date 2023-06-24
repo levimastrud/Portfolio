@@ -3,7 +3,6 @@ import React, { useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { Environment, OrbitControls, OrthographicCamera } from '@react-three/drei';
 
 //  V3 has red model
 // import world from './assets/levi-v3.glb';
@@ -19,18 +18,17 @@ const Model = () => {
   const modelRef = useRef();
   const mixer = useRef();
 
-  console.log(gltf)
+  // Rotates Model
+  useFrame(() => {
+    if (modelRef.current) {
+      modelRef.current.rotation.y += 0.004; // Adjust the rotation speed here
+    }
+  });
 
   // Play the "ArmatureAction" animation
   useFrame((state, delta) => {
     if (mixer.current) {
       mixer.current.update(delta);
-    }
-  });
-
-  useFrame(() => {
-    if (modelRef.current) {
-      modelRef.current.rotation.y += 0.004; // Adjust the rotation speed here
     }
   });
 
@@ -50,12 +48,15 @@ const Model = () => {
     }
   });
 
+  // Camera animation
+
   return (
     <primitive object={gltf.scene} scale={2.5} position={[0, -.7, 0]} rotation={[.8, 0, 0]} ref={modelRef} />
   );
 };
 
 export default function ModelViewer() {
+
   return (
     <Canvas orthographic camera={{ zoom: 150, position: [0, 0, 100] }} style={{ height: '100vh', position: 'absolute', top: 0, zIndex: -5 }}>
       <ambientLight intensity={0.2} />
@@ -64,17 +65,6 @@ export default function ModelViewer() {
       <pointLight position={[3, 0, 0]} intensity={0.75} color={0x83e6af} />
       <Suspense fallback={null}>
         <Model />
-        {/* <OrthographicCamera
-          makeDefault
-          zoom={150}
-          top={200}
-          bottom={-200}
-          left={200}
-          right={-200}
-          near={1}
-          far={2000}
-          position={[0, 0, 200]}
-        /> */}
       </Suspense>
     </Canvas>
   );

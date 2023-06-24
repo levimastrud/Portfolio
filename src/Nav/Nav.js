@@ -13,9 +13,6 @@ function Nav() {
             <Link to="/projects">Projects</Link>
           </li>
           <li className="nav-link">
-            <Link to="/blog">Blog</Link>
-          </li>
-          <li className="nav-link">
             <Link to="/about">About</Link>
           </li>
           <div className="nav-handle"></div>
