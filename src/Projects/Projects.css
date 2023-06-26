@@ -1,0 +1,196 @@
+img {
+    height: 5em;
+}
+
+.page-title-project {
+    color: white;
+    font-family: Cabin;
+    position: fixed;
+    top: 0;
+    left: 1em;
+    margin: .5em 0;
+    z-index: 20;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media screen and (max-width: 980px) {
+        justify-content: flex-start;
+    }
+}
+
+.project-image {
+    height: 25em;
+    max-width: 50em;
+    width: 90%;
+    object-fit: cover;
+    margin: 1em;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.487);
+    transition: all .2s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.project-image:hover,
+.close-description-btn:hover {
+    cursor: pointer;
+}
+
+.description-container {
+    /* margin: 0 3em 0 0; */
+}
+
+.projects-and-description-wrapper {
+    display: grid;
+    grid-template-columns: 100% 0%;
+    /* grid-template-rows: 50% 50%; */
+    transition: all .2s ease-in-out;
+    margin: 5em 0 0 0;
+    height: 100%;
+    overflow: visible;
+}
+
+.project-description {
+    background-color: rgb(34, 34, 34);
+    position: sticky;
+    top: 6em;
+    height: 35em;
+    width: 95%;
+    overflow-y: scroll;
+    display: inline-block;
+}
+
+.description-text {
+    font-size: 1.8em;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 3.5em 1em 1em 1em;
+    font-family: Quicksand;
+
+    @media screen and (max-width: 980px) {
+        font-size: 1em;
+    }
+}
+
+.project-descriptiont::before {
+    height: 2225px;
+    width: 5px;
+    background-color: red;
+    position: absolute;
+    z-index: 100;
+}
+
+/* For webkit-based browsers (Chrome, Safari) */
+.project-description::-webkit-scrollbar {
+    width: 8px;
+    /* Set the width of the scrollbar */
+}
+
+.project-description::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.294)
+    /* Set the color of the scrollbar thumb */
+}
+
+.project-description::-webkit-scrollbar-track {
+    background-color: rgb(34, 34, 34);
+    /* Set the color of the scrollbar track */
+}
+
+/* For Firefox */
+.project-description scrollbar {
+    width: 8px;
+    /* Set the width of the scrollbar */
+}
+
+.project-description scrollbar-thumb {
+    background-color: rgb(34, 34, 34);
+    /* Set the color of the scrollbar thumb */
+}
+
+.project-description scrollbar-track {
+    background-color: rgb(34, 34, 34);
+    /* Set the color of the scrollbar track */
+}
+
+
+.title-text {
+    padding: 0;
+    font-size: 2em;
+    color: white;
+    font-family: Cabin;
+
+    @media screen and (max-width: 980px) {
+        font-size: 1em;
+        max-width: 4em;
+    }
+}
+
+.title-and-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgba(34, 34, 34, 1);
+    /* backdrop-filter: blur(10px); */
+    margin-top: 1em;
+    width: 47.5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.312);
+}
+
+.close-description-btn {
+    color: rgba(255, 255, 255, 0.333);
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 1em;
+    font-size: 1.5em;
+    transition: all .2s ease-in-out;
+    
+    @media screen and (max-width: 980px) {
+        font-size: .8em;
+    }
+}
+
+.close-description-btn:hover {
+    color: white;
+}
+
+.use-project-btn {
+    background-color: white;
+    font-family: Cabin;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(34, 34, 34, 1);
+    padding: 1em;
+    position: fixed;
+    bottom: 3em;
+    font-size: 1.5em;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.487);
+
+    @media screen and (max-width: 980px) {
+        font-size: 1em;
+        bottom: 7em;
+    }
+}
+
+.use-project-btn:hover {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+}
+
+.selected {
+    border-color: white;
+    transform: scale(1.03);
+    /* Add your preferred border styles here */
+
+    @media screen and (max-width: 980px) {
+        transform: scale(1);
+    }
+}

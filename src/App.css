@@ -1,122 +1,53 @@
-
 body {
   padding: 0;
   margin: 0;
+  background-color: rgb(47, 47, 52);
 }
 
-.page-container {
-  background-color: rgb(255, 255, 255);
-  font-family: sans-serif;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-}
+/* ABOUT */
 
-.grid-wrapper {
+.about-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-rows: 20% 60% 20%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
   height: 100vh;
-  width: 100vw;
-  font-family: Cabin;
-}
-
-/* TOP */
-
-.personal-logo {
-  width: 5em;
-}
-
-.email-container,  .personal-logo-container, .main-nav, .controls-container, .project-title-container {
-  display: flex;
-  justify-content: center;
+  overflow: hidden;
   align-items: center;
 }
 
-.main-nav {
-  justify-content: space-between;
-}
-
-.email-icon {
-  width: 2em;
-}
-
-.main-nav ul {
-  display: flex;
-  justify-content: space-between;
+.image-wrapper {
+  height: 80%;
   width: 100%;
-  margin: 0;
+  padding: 0 2em;
 }
 
-.main-nav ul li {
-  list-style: none;
-}
-
-.nav-link {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  font-size: 1.5em;
-  transition: all .2s ease-in-out
-}
-
-.nav-link:hover {
-  opacity: 50%;
-}
-
-/* MIDDLE */
-
-.project-image-container {
-  grid-column: span 2;
-  display: flex; 
-  overflow: hidden;
-  position: relative;
-}
-
-.project-image {
+.self-portrait {
+  width: 100%;
   height: 100%;
-  width: 100%;
   object-fit: cover;
-  position: absolute;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: transform 0.4s ease-in-out;
 }
 
-.project-image.active {
-  transform: translateX(0%);
-  opacity: 1;
+.about-social-link-wrapper {
+  display: flex;
+  margin: 1em 0;
 }
 
-.project-description-container {
+.social-link {
+  height: 3em;
+  width: 3em;
+  background-color: black;
+  margin: 0 .5em;
+}
+
+.about-text-wrapper {
+  padding: 0 2em;
+  font-size: 2em;
+  height: 70%;
   overflow-y: scroll;
-  grid-row: span 2;
-  margin: 0 0 2em 0;
 }
 
-.project-description {
+.about-text-wrapper p {
   margin: 0;
-  padding: 0 1em;
-  font-size: 1.75em;
-  opacity: 70%;
   font-family: 'Montserrat', sans-serif !important;
-}
-
-/* BOTTOM */
-
-.project-title {
-  font-weight: normal;
-  font-size: 3em;
-}
-
-.controls-container {
-  justify-content: space-around;
-}
-
-.left-button, .right-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  width: 1.5em;
+  font-weight: bold;
 }
