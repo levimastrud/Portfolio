@@ -8,7 +8,7 @@ import twitterIcon from '../assets/twitterIcon.svg'
 
 function Home() {
   return (
-    <>
+    <div className='home-wrapper'>
       <ModelViewer />
       <div className='landing-wrapper'>
         {/* <h3 className='introduction'>Hey, I'm</h3> */}
@@ -29,7 +29,7 @@ function Home() {
           </a>
         </div>
       </div>
-    </>
+    </div>
   )
 };
 

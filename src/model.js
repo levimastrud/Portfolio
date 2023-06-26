@@ -52,6 +52,7 @@ const Model = () => {
 
   return (
     <primitive object={gltf.scene} scale={2.5} position={[0, -.7, 0]} rotation={[.8, 0, 0]} ref={modelRef} />
+    // <primitive object={gltf.scene} scale={1.5} position={[0, 0.2, 0]} rotation={[.8, 0, 0]} ref={modelRef} />
   );
 };
 
