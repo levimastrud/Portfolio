@@ -1,7 +1,13 @@
+:root {
+  --slate: rgb(40, 41, 39);
+  --green: rgb(110, 233, 96);
+  --yellow: rgb(239, 237, 113);
+}
+
 body {
   padding: 0;
   margin: 0;
-  background-color: rgb(47, 47, 52);
+  background-color: var(--slate);
 }
 
 /* ABOUT */

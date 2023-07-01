@@ -18,7 +18,7 @@ img {
     align-items: center;
     flex-direction: column;
 
-    @media screen and (max-width: 980px) {
+    @media screen and (max-width: 1050px) {
         justify-content: flex-start;
     }
 }
@@ -39,10 +39,6 @@ img {
     cursor: pointer;
 }
 
-.description-container {
-    /* margin: 0 3em 0 0; */
-}
-
 .projects-and-description-wrapper {
     display: grid;
     grid-template-columns: 100% 0%;
@@ -51,16 +47,24 @@ img {
     margin: 5em 0 0 0;
     height: 100%;
     overflow: visible;
+
+    @media screen and (max-width: 1050px) {
+        display: block;
+    }
 }
 
 .project-description {
-    background-color: rgb(34, 34, 34);
+    background-color: rgba(34, 34, 34);
     position: sticky;
     top: 6em;
-    height: 35em;
+    height: 40em;
     width: 95%;
     overflow-y: scroll;
     display: inline-block;
+
+    @media screen and (max-width: 1050px) {
+        display: none;
+    }
 }
 
 .description-text {
@@ -69,7 +73,7 @@ img {
     padding: 3.5em 1em 1em 1em;
     font-family: Quicksand;
 
-    @media screen and (max-width: 980px) {
+    @media screen and (max-width: 1050px) {
         font-size: 1em;
     }
 }
@@ -90,7 +94,7 @@ img {
 
 .project-description::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.294)
-    /* Set the color of the scrollbar thumb */
+        /* Set the color of the scrollbar thumb */
 }
 
 .project-description::-webkit-scrollbar-track {
@@ -118,10 +122,10 @@ img {
 .title-text {
     padding: 0;
     font-size: 2em;
-    color: white;
+    color: var(--yellow);
     font-family: Cabin;
 
-    @media screen and (max-width: 980px) {
+    @media screen and (max-width: 1050px) {
         font-size: 1em;
         max-width: 4em;
     }
@@ -147,8 +151,8 @@ img {
     left: 1em;
     font-size: 1.5em;
     transition: all .2s ease-in-out;
-    
-    @media screen and (max-width: 980px) {
+
+    @media screen and (max-width: 1050px) {
         font-size: .8em;
     }
 }
@@ -158,11 +162,12 @@ img {
 }
 
 .use-project-btn {
-    background-color: white;
+    background: var(--green);
+    background: linear-gradient(90deg, var(--green) 0%, var(--yellow) 100%);
+    color: var(--slate);
     font-family: Cabin;
     text-transform: uppercase;
     text-decoration: none;
-    color: rgba(34, 34, 34, 1);
     padding: 1em;
     position: fixed;
     bottom: 3em;
@@ -173,16 +178,18 @@ img {
     transition: all .2s ease-in-out;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.487);
 
-    @media screen and (max-width: 980px) {
+    @media screen and (max-width: 1050px) {
         font-size: 1em;
-        bottom: 7em;
+        bottom: 1em;
+        display: none;
     }
 }
 
 .use-project-btn:hover {
-    color: white;
+    color: var(--green);
+    background: transparent;
     background-color: transparent;
-    border-color: white;
+    border-color: var(--green);
 }
 
 .selected {
@@ -190,7 +197,52 @@ img {
     transform: scale(1.03);
     /* Add your preferred border styles here */
 
-    @media screen and (max-width: 980px) {
+    @media screen and (max-width: 1050px) {
         transform: scale(1);
+    }
+}
+
+/* Mobile */
+
+.description-text.mobile.selected {
+    padding: 1em 2em;
+    display: none;
+    margin: 0 0 1em 0;
+    text-align: center;
+
+    @media screen and (max-width: 1050px) {
+        display: block;
+    }
+}
+
+.use-project-btn.mobile,
+.description-text.mobile,
+.title-text.mobile {
+    display: none;
+}
+
+.title-text.mobile.selected {
+    display: block;
+    font-size: 2em;
+    text-align: center;
+    max-width: 80%;
+    margin: .25em 0 0 0;
+
+    @media screen and (min-width: 1050px) {
+        display: none;
+    }
+}
+
+.use-project-btn.selected {
+    border-color: transparent;
+}
+
+.use-project-btn.mobile.selected {
+    position: relative;
+    margin: 1em 0;
+    display: none;
+
+    @media screen and (max-width: 1050px) {
+        display: block;
     }
 }

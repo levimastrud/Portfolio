@@ -7,11 +7,13 @@ import twitterIcon from '../assets/twitterIcon.svg'
 
 
 function Home() {
+
+    const currentYear = new Date().getFullYear();
+
   return (
     <div className='home-wrapper'>
       <ModelViewer />
       <div className='landing-wrapper'>
-        {/* <h3 className='introduction'>Hey, I'm</h3> */}
         <h1 className='title-name'>Levi<br />Mastrud</h1>
         <div className='trade-wrapper'>
           <h3>Designer</h3>
@@ -28,6 +30,9 @@ function Home() {
             <img src={twitterIcon} />
           </a>
         </div>
+        <footer className='copyright'>
+          <p>©{currentYear} levimastrud.com</p>
+        </footer>
       </div>
     </div>
   )

@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import React, { useRef, Suspense } from 'react';
+import React, { useRef, Suspense, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -17,6 +17,8 @@ const Model = () => {
   const gltf = useLoader(GLTFLoader, world);
   const modelRef = useRef();
   const mixer = useRef();
+  const [scale, setScale] = useState(2.5);
+  const [positionY, setPositionY] = useState(-.7);
 
   // Rotates Model
   useFrame(() => {
@@ -48,11 +50,32 @@ const Model = () => {
     }
   });
 
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+
+      // Update the scale based on the screen width
+      if (screenWidth <= 980) {
+        setScale(1.5);
+        setPositionY(.5);
+      } else {
+        setScale(2.5);
+        setPositionY(-.7);
+      }
+    };
+
+    // Call the handleResize function on initial render and window resize
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Camera animation
 
   return (
-    <primitive object={gltf.scene} scale={2.5} position={[0, -.7, 0]} rotation={[.8, 0, 0]} ref={modelRef} />
-    // <primitive object={gltf.scene} scale={1.5} position={[0, 0.2, 0]} rotation={[.8, 0, 0]} ref={modelRef} />
+    <primitive object={gltf.scene} scale={scale} position={[0, positionY, 0]} rotation={[.8, 0, 0]} ref={modelRef} />
   );
 };
 
