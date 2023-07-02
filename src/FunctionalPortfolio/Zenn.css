@@ -1,0 +1,242 @@
+:root {
+    --zenn-main: #C4A9F9;
+    --zenn-secondary: #5C3CAB;
+    --zenn-bg: #2D2D2D;
+}
+
+.zenn-gradient-text {
+    background-image: linear-gradient(45deg, white, #C4A9F9, #907BD2, #7955D4, #5C3CAB);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    font-weight: 700;
+}
+
+.zenn-wrapper {
+    height: 100%;
+    width: 100vw;
+    background-color: var(--zenn-bg);
+    color: white;
+    font-family: sans-serif;
+    padding: 5em 0;
+}
+
+/* Landing Page */
+
+.zenn-title {
+    font-size: 7em;
+    font-weight: 900;
+    margin: 0;
+}
+
+.zenn-tagline {
+    color: var(--zenn-main);
+}
+
+.zenn-landing-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.zenn-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 1em 0;
+}
+
+.zenn-button-wrapper a {
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    margin: 0 2em;
+}
+
+.zenn-button-wrapper .zenn-shop-now {
+    background-color: var(--zenn-main);
+    color: var(--zenn-bg);
+    padding: .5em .8em;
+    border-radius: 12px;
+}
+
+.zenn-landing-image {
+    width: 50%;
+    height: auto;
+}
+
+#wave1 {
+    margin: 3em 0 0 0;
+}
+
+#wave2 {
+    margin: 0 0 3em 0;
+}
+
+.zenn-wave {
+    width: 100vw;
+    height: auto;
+    margin: 0;
+}
+
+/* Information Block */
+
+.zenn-information-wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: var(--zenn-main);
+    margin: -1em 0 0 0;
+}
+
+.zenn-information-block {
+    background-color: var(--zenn-main);
+    display: grid;
+    height: auto;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    margin: -1em 0 0 0;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    padding: 5em 15em;
+    width: 50%;
+}
+
+.block {
+    background-color: var(--zenn-bg);
+    border-radius: 35px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1em;
+}
+
+.block.sleep-secrets,
+.block.wake-up-naturally {
+    height: 90%;
+}
+
+.block.wake-up-naturally h4 {
+    color: var(--zenn-main);
+    font-size: 2.5em;
+}
+
+.block.wake-up-naturally h4 span {
+    color: var(--zenn-main);
+    font-size: 2em;
+}
+
+.block.sleep-smarter {
+    grid-row: span 2;
+    grid-column: 1;
+    height: 60em;
+    flex-direction: column;
+}
+
+.block.sleep-smarter h4 {
+    font-size: 5em;
+    margin: 0 0 .5em 0;
+}
+
+.block.sleep-smarter .information-image {
+    height: 50%;
+}
+
+.zenn-arrow {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    font-size: 1em;
+}
+
+/* Product Block */
+
+.product-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15em;
+}
+
+.product-block-header h3 {
+    font-size: 3em;
+    max-width: 40%;
+    font-weight: 900;
+}
+
+.product-block-header button {
+    background-color: transparent;
+    border: none;
+    color: var(--zenn-main);
+    text-align: right;
+    height: auto;
+    font-size: 2em;
+    max-width: 40%;
+}
+
+.zenn-product-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.zenn-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.zenn-product img {
+    height: 10em;
+}
+
+.zenn-product button {
+    background-color: var(--zenn-main);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-size: 1.5em;
+    padding: .2em .5em;
+}
+
+/* Charity Block */
+
+.zenn-charity-block {
+    background-color: var(--zenn-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 5em;
+    border-radius: 30px;
+    flex-direction: column;
+}
+
+.zenn-charity-block h2 {
+    color: var(--zenn-secondary);
+}
+
+.zenn-charity-block h6 {
+    color: var(--zenn-secondary);
+    opacity: 50%;
+}
+
+/* Perks */
+
+.zenn-perks-block {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.zenn-perk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 20%;
+    text-align: center;
+}

@@ -46,8 +46,11 @@ import wellIWeird from '../assets/Sounds/well-i-weird-sound.mp3'
 import yay from '../assets/Sounds/yay.mp3'
 import yesMaster from '../assets/Sounds/yesmy-master.mp3'
 import yipee from '../assets/Sounds/yipee.mp3'
-
-
+import silenthill from '../assets/Sounds/silenthill.mp3'
+import nukingislegal from '../assets/Sounds/nukingislegal.mp3'
+import holyshit from '../assets/Sounds/holyshit.mp3'
+import firedepartment from '../assets/Sounds/firedepartment.mp3'
+import djsorrow from '../assets/Sounds/djsorrow.mp3'
 
 
 function Home() {
@@ -59,7 +62,9 @@ function Home() {
   const audioRef = useRef(null);
 
   let randomSounds = [ah, aRandomSnare, yeet, applause, arcadeBleepSound, blaster, bobbyTelevision, CatMeow2, Chicken, crazyDistortedScreaming, creeper, derp, dice, duckQuack, eatShit, elephant, evilLaugh, fart,
-    funnyMeow, granularAmbient, healUp, heeHee, heheh, thickestBook, kickAss, mouse, juicy, owl, plasmablaster, pop, randomDumbSound, randomSound, randomFX, sciFi2, sciFi, terminated, wellIWeird, yay, yesMaster, yipee]
+    funnyMeow, granularAmbient, healUp, heeHee, heheh, thickestBook, kickAss, mouse, juicy, owl, plasmablaster, pop, randomDumbSound, randomSound, randomFX, sciFi2, sciFi, terminated, wellIWeird, yay, yesMaster, yipee,
+    silenthill, nukingislegal, holyshit, firedepartment, djsorrow
+  ]
 
   const updateSong = (source) => {
     setChosenSound(source);

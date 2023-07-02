@@ -31,7 +31,7 @@ function About() {
                 </div>
             </div>
             <div className="about-text-wrapper">
-                <p><span>Hello there!</span> I'm Levi Mastrud, a passionate software developer with a deep appreciation for <strong>design</strong>. I believe in the powerful combination of creativity and technology, and I'm excited about the endless possibilities that software brings to the table.</p>
+                <p><span>Hello there!</span> I'm Levi, a passionate software developer with a deep appreciation for <strong>design</strong>. I believe in the powerful combination of creativity and technology, and I'm excited about the endless possibilities that software brings to the table.</p>
                 <div className='languages-block'>
                     <h4 className='block-header'>Languages</h4>
                     <div className='language-icons'>
