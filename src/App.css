@@ -9,3 +9,7 @@ body {
   margin: 0;
   background-color: var(--slate);
 }
+
+html {
+  scroll-behavior: smooth;
+}
