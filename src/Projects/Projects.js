@@ -39,12 +39,19 @@ function Projects() {
     const [selectedProject, setSelectedProject] = useState(null);
 
     const learnAboutProject = (project) => {
-        console.log('click')
         setGridTemplateColumns('50% 50%');
         setActiveTitle(project.title)
         setActiveDescription(project.description)
         setActiveHref(project.href)
         setSelectedProject(project.title);
+
+        if (project.title === activeTitle) {
+            setGridTemplateColumns('100% 0%');
+            setActiveTitle('');
+            setActiveDescription('');
+            setActiveHref('');
+            setSelectedProject(null);
+        }
     }
 
     return (
@@ -52,7 +59,7 @@ function Projects() {
             <h1 className='page-title-project'>Projects</h1>
             <div className='projects-and-description-wrapper' style={{ gridTemplateColumns }}>
                 <div className='project-container'>
-                    
+
                     <img alt='project' onClick={() => learnAboutProject(project1)} className={`project-image ${selectedProject === project1.title ? 'selected' : ''}`} src={project1.image} />
                     <h3 className={`title-text mobile ${selectedProject === project1.title ? 'selected' : ''}`}>{activeTitle}</h3>
                     <p className={`description-text mobile ${selectedProject === project1.title ? 'selected' : ''}`}>{activeDescription}</p>
@@ -84,7 +91,9 @@ function Projects() {
                             <h3 className='title-text'>{activeTitle}</h3>
                         </div>
                         <p className='description-text'>{activeDescription}</p>
-                        <Link className='use-project-btn' to={activeHref}>Check it Out</Link>
+                        <div className='use-btn-container'>
+                            <Link className={`use-project-btn ${selectedProject !== null ? 'visible' : ''}`} to={activeHref}>Check it Out</Link>
+                        </div>
                     </div>
                 </div>
             </div>

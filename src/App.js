@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from './Nav/Nav';
 import Home from './Home/Home';
 import Projects from './Projects/Projects';
-import About from './About';
+import About from './About/About';
 import Blog from './Blog';
 // Functional Portfolio
 import Zenn from './FunctionalPortfolio/Zenn'

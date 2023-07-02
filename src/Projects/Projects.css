@@ -177,12 +177,17 @@ img {
     border-radius: 5px;
     transition: all .2s ease-in-out;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.487);
+    visibility: hidden;
 
     @media screen and (max-width: 1050px) {
         font-size: 1em;
         bottom: 1em;
         display: none;
     }
+}
+
+.use-project-btn.visible {
+    visibility: visible;
 }
 
 .use-project-btn:hover {
@@ -192,8 +197,14 @@ img {
     border-color: var(--green);
 }
 
+.use-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .selected {
-    border-color: white;
+    border-color: var(--yellow);
     transform: scale(1.03);
     /* Add your preferred border styles here */
 
