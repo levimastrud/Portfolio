@@ -68,7 +68,7 @@
     height: 20em;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid var(--green);
+    border: 5px solid white;
 
     @media screen and (max-width: 980px) {
         width: 15em;
@@ -168,6 +168,10 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @media screen and (max-width: 980px) {
+        justify-content: center;
+    }
 }
 
 .language-icons img {
