@@ -1,4 +1,4 @@
-import './Zenn.css';
+import './Zenn.scss';
 import wave1 from '../assets/Zenn/wave1-01.svg'
 import wave2 from '../assets/Zenn/wave2-01.svg'
 import zennArrow from '../assets/Zenn/zenn-button.svg'
