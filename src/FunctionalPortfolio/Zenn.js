@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import './Zenn.scss';
-=======
-import './Zenn.css';
->>>>>>> parent of 7589843 (nearly wrapped up with zenn)
 import wave1 from '../assets/Zenn/wave1-01.svg'
 import wave2 from '../assets/Zenn/wave2-01.svg'
 import zennArrow from '../assets/Zenn/zenn-button.svg'
