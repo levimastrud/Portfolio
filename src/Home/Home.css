@@ -48,7 +48,6 @@
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: gradientAnimation 3s infinite;
 
     @media screen and (max-width: 980px) {
         text-align: center;
