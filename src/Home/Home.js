@@ -8,6 +8,7 @@ import logoIcon from '../assets/logo-icon-01.svg'
 // Sounds
 import ah from '../assets/Sounds/ah.mp3'
 import aRandomSnare from '../assets/Sounds/a-random-snare.mp3'
+import yeet from '../assets/Sounds/aaah_yeete.mp3'
 import applause from '../assets/Sounds/applause.mp3'
 import arcadeBleepSound from '../assets/Sounds/arcade-bleep-sound.mp3'
 import blaster from '../assets/Sounds/blaster.mp3'
@@ -19,6 +20,7 @@ import creeper from '../assets/Sounds/creeper.mp3'
 import derp from '../assets/Sounds/derpa-derpa-derpa-derp.mp3'
 import dice from '../assets/Sounds/dice.mp3'
 import duckQuack from '../assets/Sounds/duck-quack.mp3'
+import eatShit from '../assets/Sounds/eat-shit-and-die.mp3'
 import elephant from '../assets/Sounds/elephant.mp3'
 import evilLaugh from '../assets/Sounds/evil-laugh.mp3'
 import fart from '../assets/Sounds/fart.mp3'
@@ -45,6 +47,7 @@ import yay from '../assets/Sounds/yay.mp3'
 import yesMaster from '../assets/Sounds/yesmy-master.mp3'
 import yipee from '../assets/Sounds/yipee.mp3'
 import silenthill from '../assets/Sounds/silenthill.mp3'
+import nukingislegal from '../assets/Sounds/nukingislegal.mp3'
 import holyshit from '../assets/Sounds/holyshit.mp3'
 import firedepartment from '../assets/Sounds/firedepartment.mp3'
 import djsorrow from '../assets/Sounds/djsorrow.mp3'
@@ -58,14 +61,13 @@ function Home() {
   const [chosenSound, setChosenSound] = useState(ah);
   const audioRef = useRef(null);
 
-  let randomSounds = [ah, aRandomSnare, applause, arcadeBleepSound, blaster, bobbyTelevision, CatMeow2, Chicken, crazyDistortedScreaming, creeper, derp, dice, duckQuack, elephant, evilLaugh, fart,
+  let randomSounds = [ah, aRandomSnare, yeet, applause, arcadeBleepSound, blaster, bobbyTelevision, CatMeow2, Chicken, crazyDistortedScreaming, creeper, derp, dice, duckQuack, eatShit, elephant, evilLaugh, fart,
     funnyMeow, granularAmbient, healUp, heeHee, heheh, thickestBook, kickAss, mouse, juicy, owl, plasmablaster, pop, randomDumbSound, randomSound, randomFX, sciFi2, sciFi, terminated, wellIWeird, yay, yesMaster, yipee,
-    silenthill, holyshit, firedepartment, djsorrow
+    silenthill, nukingislegal, holyshit, firedepartment, djsorrow
   ]
 
   const updateSong = (source) => {
     setChosenSound(source);
-    console.log(chosenSound);
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.load();

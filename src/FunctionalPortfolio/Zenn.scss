@@ -4,10 +4,6 @@
     --zenn-bg: #2D2D2D;
 }
 
-button {
-    transition: all .2s ease-in-out;
-}
-
 .zenn-gradient-text {
     background-image: linear-gradient(45deg, white, #C4A9F9, #907BD2, #7955D4, #5C3CAB);
     -webkit-background-clip: text;
@@ -19,28 +15,23 @@ button {
 
 .zenn-wrapper {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     background-color: var(--zenn-bg);
-    background: rgb(45,45,45);
-    background: linear-gradient(180deg, rgba(45,45,45,1) 25%, rgba(74,73,69,1) 100%);
     color: white;
     font-family: sans-serif;
     padding: 5em 0;
-    overflow-x: hidden;
 }
 
 /* Landing Page */
 
 .zenn-title {
-    font-size: 8em;
+    font-size: 7em;
     font-weight: 900;
     margin: 0;
 }
 
 .zenn-tagline {
     color: var(--zenn-main);
-    font-style: italic;
-    margin: 0;
 }
 
 .zenn-landing-wrapper {
@@ -61,17 +52,8 @@ button {
 .zenn-button-wrapper a {
     color: white;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 0 2em;
-    transition: all .2s ease-in-out;
-}
-
-.zenn-button-wrapper .zenn-learn-more {
-    opacity: 70%;
-}
-
-.zenn-button-wrapper .zenn-learn-more:hover {
-    opacity: 100%;
 }
 
 .zenn-button-wrapper .zenn-shop-now {
@@ -79,21 +61,10 @@ button {
     color: var(--zenn-bg);
     padding: .5em .8em;
     border-radius: 12px;
-    border: 2px solid transparent;
-}
-
-.zenn-button-wrapper .zenn-shop-now:hover, .zenn-buy-button:hover {
-    color: var(--zenn-main);
-    border-color: var(--zenn-main);
-    background-color: transparent;
-}
-
-.down-arrow {
-    height: .8em;
 }
 
 .zenn-landing-image {
-    width: 30%;
+    width: 50%;
     height: auto;
 }
 
@@ -142,40 +113,11 @@ button {
     align-items: center;
     text-align: center;
     padding: 0 1em;
-    overflow: hidden;
 }
 
 .block.sleep-secrets,
 .block.wake-up-naturally {
     height: 90%;
-}
-
-.sleeping-man {
-    height: 30em;
-    top: 5em;
-    position: absolute;
-}
-
-.unlock {
-    position: absolute;
-    top: 1em;
-    font-size: 2.5em;
-    margin: 0;
-}
-
-.sleep-secret-title {
-    position: absolute;
-    font-size: 3em;
-    margin: 0 !important;
-    top: 2em;
-    right: 1em;
-    text-align: left;
-    overflow: visible;
-    z-index: 10;
-}
-
-.block.sleep-secrets {
-    color: var(--zenn-main);
 }
 
 .block.wake-up-naturally h4 {
@@ -256,24 +198,8 @@ button {
     background-color: var(--zenn-main);
     border: 2px solid transparent;
     border-radius: 10px;
-    font-size: 1.3em;
-    padding: .2em 1em;
-    color: var(--zenn-bg);
-    /* text-transform: uppercase; */
-}
-
-.product-name {
-    font-size: 2em;
-    margin: 1em 0;
-}
-
-.product-description {
-    margin: 0em 0;
-    opacity: 50%;
-}
-
-.product-price {
-    font-size: 1.3em;
+    font-size: 1.5em;
+    padding: .2em .5em;
 }
 
 /* Charity Block */
@@ -281,34 +207,19 @@ button {
 .zenn-charity-block {
     background-color: var(--zenn-main);
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    margin: 5em 0em;
-    /* border-radius: 30px; */
-    flex-direction: row;
-    padding: 0 0 0 15%;
-    height: 30em;
-    position: relative;
-    overflow: hidden;
-}
-
-.charity-man {
-    /* position: absolute; */
-    height: 40em;
-    right: 15%;
+    margin: 3em 5em;
+    border-radius: 30px;
+    flex-direction: column;
 }
 
 .zenn-charity-block h2 {
     color: var(--zenn-secondary);
-    font-size: 5em;
-    margin: .2em 0;
 }
 
 .zenn-charity-block h6 {
     color: var(--zenn-secondary);
-    font-size: 2em;
-    margin: 0;
-    max-width: 50%;
     opacity: 50%;
 }
 
@@ -317,7 +228,7 @@ button {
 .zenn-perks-block {
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: row;
 }
 
@@ -328,18 +239,4 @@ button {
     flex-direction: column;
     max-width: 20%;
     text-align: center;
-}
-
-.zenn-perk img {
-    height: 10em;
-}
-
-.zenn-perk h4 {
-    font-size: 2em;
-    margin-top: 0;
-}
-
-.zenn-perk p {
-    opacity: 50%;
-    font-size: 1.5em;
 }
