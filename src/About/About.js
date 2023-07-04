@@ -1,4 +1,4 @@
-import '../About/About.css'
+import '../About/About.scss'
 import levi from '../assets/levi.png'
 import linkedInIcon from '../assets/linkedIn.svg'
 import mailIcon from '../assets/mailIcon.svg'

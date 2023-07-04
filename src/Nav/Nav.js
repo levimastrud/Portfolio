@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import './Nav.css'
+import './Nav.scss'
 import Hamburger from '../assets/hamburger-01.svg'
 import CloseIcon from '../assets/close-icon-01.svg'
 import { useState } from 'react';

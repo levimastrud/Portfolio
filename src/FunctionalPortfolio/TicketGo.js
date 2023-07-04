@@ -1,4 +1,4 @@
-import './TicketGo.css';
+import './TicketGo.scss';
 
 function TicketGo() {
 

@@ -1,4 +1,4 @@
-import './ForgedInIsolation.css';
+import './ForgedInIsolation.scss';
 
 function ForgedInIsolation() {
 

@@ -1,4 +1,4 @@
-import './EnigmaBistro.css';
+import './EnigmaBistro.scss';
 
 function EnigmaBistro() {
 

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import './Zenn.css';
 // Assets
+=======
+import './Zenn.scss';
+>>>>>>> d49dab1ec6b1fa78f954fbee6276fe98ee54c3c2
 import wave1 from '../assets/Zenn/wave1-01.svg'
 import wave2 from '../assets/Zenn/wave2-01.svg'
 import zennArrow from '../assets/Zenn/zenn-button.svg'
