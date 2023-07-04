@@ -1,0 +1,125 @@
+.landing-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 6em;
+    overflow: hidden;
+
+    @media screen and (max-width: 980px) {
+        padding: 0 1em;
+    }
+}
+
+.landing-wrapper h3 {
+    margin: .5em 0;
+}
+
+.introduction {
+    color: white;
+    font-family: Cabin;
+}
+
+.logo-icon {
+    position: absolute;
+    top: 4em;
+    left: 6em;
+    height: 2em;
+
+    @media screen and (max-width: 980px) {
+        top: 1.85em;
+        left: 2em;
+    }
+}
+
+.title-name {
+    letter-spacing: .045em;
+    font-size: 5em;
+    font-family: Cabin;
+    text-transform: uppercase;
+    color: rgb(110, 233, 96);
+    padding: 0;
+    margin: 0;
+    font-weight:bolder;
+
+    background-image: linear-gradient(to right, rgb(110, 233, 96), rgb(239, 237, 113));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    @media screen and (max-width: 980px) {
+        text-align: center;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 400px) {
+        font-size: 3em;
+    }
+}
+
+.trade-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 15em;
+    font-size: 1.5em;
+    font-family: Cabin;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+
+    @media screen and (max-width: 980px) {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    @media screen and (max-width: 300px) {
+        font-size: 1em;
+    }
+}
+
+.social-link-wrapper {
+    display: flex;
+    margin: 0 0 4em 0;
+
+    @media screen and (max-width: 980px) {
+        width: 100%;
+        justify-content: space-around;
+        margin: 0 0 2em 0;
+    }
+}
+
+.social-link {
+    height: 3em;
+    width: 3em;
+    margin: 0 .5em;
+    background-color: transparent !important;
+    transition: transform 2s ease-in-out;
+}
+
+.social-link img {
+    height: 2em;
+    transition: transform .2s ease-in-out;
+}
+
+.social-link img:hover {
+    transform: scale(1.1);
+}
+
+.social-link:first-child {
+    margin-left: 0;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 2.5em;
+    right: 1em;
+    color: rgb(154, 154, 154);
+    opacity: 20%;
+    font-family: Cabin;
+    padding: 0 2em;
+
+    @media screen and (max-width: 980px) {
+        display: none;
+    }
+}

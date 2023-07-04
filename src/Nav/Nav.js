@@ -20,7 +20,7 @@ function Nav() {
     <>
       <nav>
         {/* Mobile */}
-        <img className="mobile-icon" onClick={toggleMobileMenu} src={mobileDisplay === 'none' ? Hamburger : CloseIcon} />
+        <img alt="logo" className="mobile-icon" onClick={toggleMobileMenu} src={mobileDisplay === 'none' ? Hamburger : CloseIcon} />
         <div className="mobile-overlay" style={{ display: mobileDisplay }}>
           <ul className="mobile-nav-link-wrapper">
             <li className="mobile-nav-link">

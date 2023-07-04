@@ -13,19 +13,19 @@ function About() {
     return (
         <div className="about-wrapper">
             <div className='image-wrapper'>
-                <img className='self-portrait' src={levi} />
+                <img alt='levi' className='self-portrait' src={levi} />
                 <div className='about-details'>
                     <h3>Levi<br />Mastrud</h3>
                     <h6>Fargo, North Dakota</h6>
                     <div className="social-link-wrapper about">
                         <a className='social-link' target='_blank' href='/https://www.linkedin.com/in/levimastrud/'>
-                            <img src={linkedInIcon} />
+                            <img alt='linkedIn icon' src={linkedInIcon} />
                         </a>
                         <a className='social-link' href='/'>
-                            <img src={mailIcon} />
+                            <img alt='email icon' src={mailIcon} />
                         </a>
                         <a className='social-link' target='_blank' href='/https://twitter.com/levimas_'>
-                            <img src={twitterIcon} />
+                            <img alt='twitter icon' src={twitterIcon} />
                         </a>
                     </div>
                 </div>
@@ -35,17 +35,17 @@ function About() {
                 <div className='languages-block'>
                     <h4 className='block-header'>Languages</h4>
                     <div className='language-icons'>
-                        <img src={htmlIcon} />
-                        <img src={cssIcon} />
-                        <img src={jsIcon} />
-                        <img src={pythonIcon} />
-                        <img src={csharpIcon} />
+                        <img alt='html icon' src={htmlIcon} />
+                        <img alt='css icon' src={cssIcon} />
+                        <img alt='javascript icon' src={jsIcon} />
+                        <img alt='python icon' src={pythonIcon} />
+                        <img alt='c sharp icon' src={csharpIcon} />
                     </div>
                 </div>
                 <p>I thrive on the thrill of <strong>learning</strong> and <strong>experimenting</strong> with new technologies. Whether it's diving into cutting-edge frameworks or exploring innovative solutions, I love embracing <strong>challenges</strong> and taking risks to push the boundaries of what's possible.</p>
                 <div className='languages-block'>
                     <h4 className='block-header'>Years of Experience</h4>
-                    <h4 className='experience-years'>1+</h4>
+                    <h4 className='experience-years'>3+</h4>
                 </div>
                 <p>Join me as I navigate the ever-evolving world of software development, embracing new technologies and pushing the boundaries of innovation. Let's build something extraordinary <strong>together!</strong></p>
             </div>
