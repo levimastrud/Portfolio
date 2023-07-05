@@ -82,7 +82,7 @@ function Home() {
 
   return (
     <div className='home-wrapper'>
-      <ModelViewer />
+      {/* <ModelViewer /> */}
       <audio ref={audioRef}>
         <source src={chosenSound} type="audio/mp3" />
       </audio>
