@@ -21,8 +21,8 @@ button {
     height: 100%;
     width: 100%;
     background-color: var(--zenn-bg);
-    background: rgb(45,45,45);
-    background: linear-gradient(180deg, rgba(45,45,45,1) 25%, rgba(74,73,69,1) 100%);
+    background: rgb(45, 45, 45);
+    background: linear-gradient(180deg, rgba(45, 45, 45, 1) 25%, rgba(74, 73, 69, 1) 100%);
     color: white;
     font-family: sans-serif;
     padding: 5em 0;
@@ -35,6 +35,10 @@ button {
     font-size: 8em;
     font-weight: 900;
     margin: 0;
+
+    @media screen and (max-width: 980px) {
+        font-size: 5em;
+    }
 }
 
 .zenn-tagline {
@@ -56,6 +60,10 @@ button {
     align-items: center;
     width: 50%;
     margin: 1em 0;
+
+    @media screen and (max-width: 980px) {
+        width: 100%;
+    }
 }
 
 .zenn-button-wrapper a {
@@ -64,6 +72,10 @@ button {
     font-size: 1.5em;
     margin: 0 2em;
     transition: all .2s ease-in-out;
+
+    @media screen and (max-width: 980px) {
+        font-size: .8em;
+    }
 }
 
 .zenn-button-wrapper .zenn-learn-more {
@@ -82,7 +94,8 @@ button {
     border: 2px solid transparent;
 }
 
-.zenn-button-wrapper .zenn-shop-now:hover, .zenn-buy-button:hover {
+.zenn-button-wrapper .zenn-shop-now:hover,
+.zenn-buy-button:hover {
     color: var(--zenn-main);
     border-color: var(--zenn-main);
     background-color: transparent;
@@ -93,8 +106,15 @@ button {
 }
 
 .zenn-landing-image {
-    width: 30%;
+    width: 40%;
     height: auto;
+    margin: -2em 0;
+
+    @media screen and (max-width: 980px) {
+        // position: absolute;
+        width: 100%;
+        margin: 0;
+    }
 }
 
 #wave1 {
@@ -131,6 +151,13 @@ button {
     grid-row-gap: 50px;
     padding: 5em 15em;
     width: 50%;
+
+    @media screen and (max-width: 980px) {
+        width: 100%;
+        padding: 5em 2em 10em 2em;
+        grid-template-columns: auto;
+        grid-template-rows: 33% 33% 33%;
+    }
 }
 
 .block {
@@ -150,10 +177,35 @@ button {
     height: 90%;
 }
 
+@media screen and (max-width: 980px) {
+
+    .block.sleep-secrets,
+    .block.wake-up-naturally,
+    .block.sleep-smarter {
+        height: 100%;
+    }
+
+    .block.wake-up-naturally h4,
+    .block.sleep-smarter h4 {
+        font-size: 3em !important;
+    }
+
+    .block.sleep-secrets h4 span,
+    .block.wake-up-naturally h4 span,
+    .block.sleep-smarter h4 span {
+        font-size: 1em !important;
+    }
+}
+
 .sleeping-man {
     height: 30em;
     top: 5em;
     position: absolute;
+
+    @media screen and (max-width: 980px) {
+        bottom: 0;
+        top: auto;
+    }
 }
 
 .unlock {
@@ -172,6 +224,14 @@ button {
     text-align: left;
     overflow: visible;
     z-index: 10;
+
+    @media screen and (max-width: 980px) {
+        top: 20%;
+        right: auto;
+        text-align: center;
+        font-size: 4em !important;
+        width: 100%;
+    }
 }
 
 .block.sleep-secrets {
@@ -193,6 +253,12 @@ button {
     grid-column: 1;
     height: 60em;
     flex-direction: column;
+
+    @media screen and (max-width: 980px) {
+        grid-row: auto;
+        grid-column: auto;
+        height: auto;
+    }
 }
 
 .block.sleep-smarter h4 {
@@ -218,6 +284,10 @@ button {
     justify-content: space-between;
     align-items: center;
     padding: 0 15em;
+
+    @media screen and (max-width: 980px) {
+        padding: 0 0 0 3em;
+    }
 }
 
 .product-block-header h3 {
@@ -234,11 +304,21 @@ button {
     height: auto;
     font-size: 2em;
     max-width: 40%;
+
+    @media screen and (max-width: 980px) {
+        display: none;
+    }
 }
 
 .zenn-product-wrapper {
     display: flex;
     justify-content: space-evenly;
+
+    @media screen and (max-width: 980px) {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+    }
 }
 
 .zenn-product {
@@ -246,10 +326,18 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    @media screen and (max-width: 980px) {
+        margin: 3em 1em;
+    }
 }
 
 .zenn-product img {
     height: 10em;
+
+    @media screen and (max-width: 980px) {
+        height: 8em;
+    }
 }
 
 .zenn-product button {
@@ -265,6 +353,10 @@ button {
 .product-name {
     font-size: 2em;
     margin: 1em 0;
+
+    @media screen and (max-width: 980px) {
+        font-size: 1em;
+    }
 }
 
 .product-description {
@@ -290,18 +382,38 @@ button {
     height: 30em;
     position: relative;
     overflow: hidden;
+
+    @media screen and (max-width: 980px) {
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2em 0 2em 15%;
+    }
 }
 
 .charity-man {
     /* position: absolute; */
     height: 40em;
     right: 15%;
+
+    @media screen and (max-width: 980px) {
+        height: 20em;
+        position: absolute;
+        bottom: -1em;
+        right: -5em;
+        opacity: 20%;
+    }
 }
 
 .zenn-charity-block h2 {
     color: var(--zenn-secondary);
     font-size: 5em;
     margin: .2em 0;
+
+    @media screen and (max-width: 980px) {
+        font-size: 3em;
+    }
 }
 
 .zenn-charity-block h6 {
@@ -332,14 +444,26 @@ button {
 
 .zenn-perk img {
     height: 10em;
+
+    @media screen and (max-width: 980px) {
+        height: auto;
+    }
 }
 
 .zenn-perk h4 {
     font-size: 2em;
     margin-top: 0;
+
+    @media screen and (max-width: 980px) {
+        font-size: 1em;
+    }
 }
 
 .zenn-perk p {
     opacity: 50%;
     font-size: 1.5em;
+
+    @media screen and (max-width: 980px) {
+        font-size: .8em;
+    }
 }
