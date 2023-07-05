@@ -5,7 +5,6 @@ import Nav from './Nav/Nav';
 import Home from './Home/Home';
 import Projects from './Projects/Projects';
 import About from './About/About';
-import Blog from './Blog';
 // Functional Portfolio
 import Zenn from './FunctionalPortfolio/Zenn'
 import EnigmaBistro from './FunctionalPortfolio/EnigmaBistro'
@@ -18,7 +17,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Nav />}>
           <Route index element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/zenn" element={<Zenn />} />

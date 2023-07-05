@@ -1,4 +1,4 @@
-import './Home.scss'
+import './Home.css'
 import { useState, useRef } from 'react';
 import ModelViewer from '../model';
 import linkedInIcon from '../assets/linkedIn.svg'
@@ -87,7 +87,7 @@ function Home() {
         <source src={chosenSound} type="audio/mp3" />
       </audio>
       <div className='landing-wrapper'>
-        <img style={{ transform: `rotate(${rotationAngle}deg)` }} onClick={handleLogoClick} className='logo-icon' src={logoIcon} />
+        <img alt='logo' style={{ transform: `rotate(${rotationAngle}deg)` }} onClick={handleLogoClick} className='logo-icon' src={logoIcon} />
         <h1 className='title-name'>Levi<br />Mastrud</h1>
         <div className='trade-wrapper'>
           <h3>Designer</h3>
@@ -95,13 +95,13 @@ function Home() {
         </div>
         <div className="social-link-wrapper">
           <a className='social-link' target='_blank' href='/https://www.linkedin.com/in/levimastrud/'>
-            <img src={linkedInIcon} />
+            <img alt='linkedIn icon' src={linkedInIcon} />
           </a>
           <a className='social-link' href='/'>
-            <img src={mailIcon} />
+            <img  alt='email icon' src={mailIcon} />
           </a>
           <a className='social-link' target='_blank' href='/https://twitter.com/levimas_'>
-            <img src={twitterIcon} />
+            <img alt='twitter icon' src={twitterIcon} />
           </a>
         </div>
         <footer className='copyright'>
