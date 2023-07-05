@@ -158,7 +158,7 @@ function TicketGo() {
                         <h3>About</h3>
                         <p>Juniper Fields</p>
                     </div>
-                    <div className='about-wrapper'>
+                    <div className='tg-about-wrapper'>
                         <div className='tg-about-text'>
                             <p>Juniper Fields is an indie/alternative band founded by lead singer Alex Grenelly in 2009. Hailing from Fargo, North Dakota, their music blends heartfelt introspection
                                 with a touch of Midwestern charm. With soulful vocals and captivating melodies, Juniper Fields takes listeners on a sonic journey through indie rock and alternative
