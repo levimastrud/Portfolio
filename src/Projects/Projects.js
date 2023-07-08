@@ -26,10 +26,10 @@ function Projects() {
     }
 
     let project4 = {
-        title: 'Enigma Bistro',
+        title: 'Enigma Kitchen',
         image: 'https://images.unsplash.com/photo-1627637819794-fba32f82be16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80',
         description: 'This ambitious endeavor aims to create a collaborative platform where diverse disciplines converge, fostering groundbreaking ideas and driving innovation to new heights. Project Nexus brings together experts, researchers, and entrepreneurs from various fields, enabling cross-pollination of knowledge and expertise. By encouraging interdisciplinary collaboration, the project sparks the creation of novel solutions to complex global challenges. Through workshops, conferences, and shared spaces, Project Nexus provides a fertile ground for innovation to thrive. Join us as we forge meaningful connections, empower ideas, and shape a future where collective intelligence leads to transformative advancements. Welcome to the nexus of innovation and limitless possibilities.',
-        href: '/enigma-bistro'
+        href: '/enigma-kitchen'
     }
 
     const [gridTemplateColumns, setGridTemplateColumns] = useState('100% 0%');

@@ -1,4 +1,5 @@
 import './Zenn.scss';
+import { useState } from 'react';
 import wave1 from '../assets/Zenn/wave1-01.svg'
 import wave2 from '../assets/Zenn/wave2-01.svg'
 import zennArrow from '../assets/Zenn/zenn-button.svg'
@@ -12,6 +13,14 @@ import personSleeping from '../assets/Zenn/personsleeping.png'
 import Footer from '../Footer';
 
 function Zenn() {
+
+    const [slideOutSmarter, setslideOutSmarter] = useState(false);
+    const [slideOutSecret, setslideOutSecret] = useState(false);
+    const [slideOutNaturally, setslideOutNaturally] = useState(false);
+
+    const learnMore = () => {
+        setSlideOut(true);
+    };
 
     return (
         <>
@@ -31,17 +40,26 @@ function Zenn() {
                         <div className='block sleep-smarter'>
                             <h4 className='zenn-gradient-text'>Sleep<br />Smarter.</h4>
                             <img className='information-image' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPLV3ref_VW_PF+watch-44-alum-starlight-nc-se_VW_PF_WF_SI?wid=2000&hei=2000&fmt=png-alpha&.v=1683237043713' />
-                            <img className='zenn-arrow' src={zennArrow} />
+                            <div className={`reveal-slide ${slideOutSmarter ? 'slide-out' : ''}`}>
+                                <h3>lorem lorem lorem</h3>
+                            </div>
+                            <img onClick={() => learnMore()} className='zenn-arrow' src={zennArrow} />
                         </div>
                         <div className='block sleep-secrets'>
                             <h4 className='unlock'>Unlock your</h4>
-                            <h4 className='sleep-secret-title'><span className='zenn-gradient-text'><span className='sleep'>Sleep</span><br/>Secrets</span></h4>
-                            <img className='sleeping-man' src={personSleeping}/>
-                            <img className='zenn-arrow' src={zennArrow} />
+                            <h4 className='sleep-secret-title'><span className='zenn-gradient-text'><span className='sleep'>Sleep</span><br />Secrets</span></h4>
+                            <img className='sleeping-man' src={personSleeping} />
+                            <div className={`reveal-slide ${slideOutSecret ? 'slide-out' : ''}`}>
+                                <h3>lorem lorem lorem</h3>
+                            </div>
+                            <img onClick={() => learnMore()} className='zenn-arrow' src={zennArrow} />
                         </div>
                         <div className='block wake-up-naturally'>
                             <h4>Wake up<br /><span className='zenn-gradient-text'>Naturally</span></h4>
-                            <img className='zenn-arrow' src={zennArrow} />
+                            <div className={`reveal-slide ${slideOutNaturally ? 'slide-out' : ''}`}>
+                                <h3>lorem lorem lorem</h3>
+                            </div>
+                            <img onClick={() => learnMore()} className='zenn-arrow' src={zennArrow} />
                         </div>
                     </div>
                 </div>

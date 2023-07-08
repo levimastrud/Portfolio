@@ -7,7 +7,7 @@ import Projects from './Projects/Projects';
 import About from './About/About';
 // Functional Portfolio
 import Zenn from './FunctionalPortfolio/Zenn'
-import EnigmaBistro from './FunctionalPortfolio/EnigmaBistro'
+import EnigmaKitchen from './FunctionalPortfolio/EnigmaKitchen'
 import TicketGo from './FunctionalPortfolio/TicketGo'
 import ForgedInIsolation from './FunctionalPortfolio/ForgedInIsolation'
 
@@ -20,7 +20,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/zenn" element={<Zenn />} />
-          <Route path="/enigma-bistro" element={<EnigmaBistro />} />
+          <Route path="/enigma-kitchen" element={<EnigmaKitchen />} />
           <Route path="/ticketgo" element={<TicketGo />} />
           <Route path="/forged-in-isolation" element={<ForgedInIsolation />} />
           <Route path="*" element={<Home />} />

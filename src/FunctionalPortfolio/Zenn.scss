@@ -160,7 +160,7 @@ button {
     }
 }
 
-.block {
+.block, .starting-slide {
     background-color: var(--zenn-bg);
     border-radius: 35px;
     position: relative;
@@ -170,11 +170,29 @@ button {
     text-align: center;
     padding: 0 1em;
     overflow: hidden;
+    flex-direction: column;
 }
 
 .block.sleep-secrets,
 .block.wake-up-naturally {
     height: 90%;
+}
+
+.reveal-slide {
+    // display: none;
+    background-color: red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    transform: translateX(-100%);
+    transition: all .2s ease-in-out;
+}
+
+.reveal-slide.secrets.slide-out, .reveal-slide.naturally {
+    transform: translateX(0%);
 }
 
 @media screen and (max-width: 980px) {

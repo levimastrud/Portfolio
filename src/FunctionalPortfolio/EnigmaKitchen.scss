@@ -1,0 +1,221 @@
+:root {
+    --ek-white: #F3FAEF;
+    --ek-red: #C5414D;
+    --ek-blue1: #B9D9DB;
+    --ek-blue2: #5C789B;
+    --ek-blue3: #283255;
+}
+
+.ek-wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: -5;
+    font-family: Cabin;
+}
+
+.ek-wrapper a {
+    color: var(--ek-blue3);
+    text-decoration: none;
+}
+
+.ek-wrapper p {
+    margin: 0;
+}
+
+// Nav
+
+.ek-nav {
+    background-color: var(--ek-blue1);
+    // height: 15em;
+    width: 100%;
+    // position: fixed;
+    top: 0;
+    z-index: 10;
+    position: fixed;
+    // padding: 0 3em;
+}
+
+.main-nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3em;
+}
+
+.search-wrapper {
+    width: 80%;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ek-search {
+    border: none;
+    padding: 0em 1em;
+    height: 100%;
+    width: 70%;
+}
+
+.search-button {
+    background-color: var(--ek-blue3);
+    border: none;
+    height: 100%;
+    width: 3em;
+}
+
+.search-button img {
+    height: 50%;
+}
+
+.sub-nav {
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--ek-red);
+    padding: .5em 0;
+    position: absolute;
+    bottom: -2em;
+    width: 100%;
+}
+
+.sub-nav a {
+    color: white;
+    margin: 0 3em;
+}
+
+// Product
+
+.ek-product-wrapper {
+    padding: 15em 3em;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.ek-product-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.breadcrumbs {
+    color: var(--ek-red);
+}
+
+.main-image {
+    // width: 100%;
+    height: 50%;
+    // max-height: 90%;
+    margin: 2em 0;
+}
+
+.sub-images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-images img {
+    height: 3em;
+    width: 3em;
+    object-fit: cover;
+    border: 1px solid var(--ek-blue3);
+    padding: .5em;
+}
+
+.ek-product-add-to-cart {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.cart-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--ek-blue1);
+    padding: 2em;
+    position: sticky;
+}
+
+// More information
+
+.ek-more-information-block {
+    padding: 3em;
+}
+
+// More Like This, Customers also Bought
+
+.ek-similar-products-block, .ek-also-bought-block {
+    padding: 3em;
+}
+
+.ek-block-title {
+    font-size: 3em;
+}
+
+.ek-more-products-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ek-more-products-wrapper .product {
+    height: 20em;
+    width: 15%;
+    background-color: var(--ek-blue1);
+    border-radius: 10px;
+}
+
+// Newsletter
+
+.ek-newsletter-block {
+    padding: 3em;
+    background-color: var(--ek-red);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ek-newsletter-block h3 {
+    color: white;
+    font-size: 2em;
+    margin: 0;
+}
+
+.ek-newsletter-block button {
+    background-color: white;
+    border: none;
+    font-size: 1.5em;
+    padding: .5em 1em;
+    width: 20%;
+}
+
+// Footer
+
+.ek-footer-block {
+    padding: 3em;
+}
+
+.ek-footer {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.ek-footer ul {
+    list-style: none;
+}
+
+.ek-footer ul li:first-child {
+    font-weight: 900;
+}
+
+// Notice
+
+.ek-notice-block {
+    padding: 3em;
+    background-color: var(--ek-blue3);
+    display: flex;
+    justify-content: space-around;
+    color: #5C789B;
+}
