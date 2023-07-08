@@ -3,6 +3,7 @@ import EnigmaKitchenLogo from '../assets/EnigmaKitchen/ek-logo.svg'
 import AccountIcon from '../assets/EnigmaKitchen/account.svg'
 import CartIcon from '../assets/EnigmaKitchen/cart.svg'
 import SearchIcon from '../assets/EnigmaKitchen/search.svg'
+import Footer from '../Footer';
 
 
 function EnigmaKitchen() {
@@ -17,8 +18,10 @@ function EnigmaKitchen() {
                             <input placeholder='Search...' className='ek-search'></input>
                             <button className='search-button'><img src={SearchIcon} /></button>
                         </div>
-                        <img className='ek-cart' src={CartIcon} />
-                        <img className='ek-account' src={AccountIcon} />
+                        <div className='cart-and-account-wrapper'>
+                            <img className='ek-cart' src={CartIcon} />
+                            <img className='ek-account' src={AccountIcon} />
+                        </div>
                     </div>
                     <nav className='sub-nav'>
                         <a href=''>All</a>
@@ -41,33 +44,43 @@ function EnigmaKitchen() {
                                 <img src='https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80' />
                                 <img src='https://plus.unsplash.com/premium_photo-1664360228046-a0a7ccf4fb38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80' />
                                 <img src='https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=722&q=80' />
+                                <img src='https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80' />
                             </div>
                         </div>
                     </div>
                     {/* Product Info and Options */}
                     <div className='ek-product-information'>
-                        <h1>Product Title</h1>
-                        <p>Lorem Lorem Lorem Lorem LoremLorem Lorem LoremLorem</p>
+                        <h1 className='product-title'>Product Title</h1>
+                        <p className='product-brief-description'>Lorem Lorem Lorem Lorem LoremLorem Lorem LoremLorem</p>
                         <p>Reviews</p>
                         <p>Price:</p>
                         <h4>$40.00 - $50.00</h4>
                         <div className='product-options'>
-                            <label htmlFor="size">Size:</label><br />
-                            <input id="size" type="text" /><br />
-                            <label htmlFor="flavor">Flavor:</label><br />
-                            <input id="flavor" type="text" /><br />
-                            <label htmlFor="add-ons">Add Ons:</label><br />
-                            <input id="add-ons" type="text" /><br />
+                            <div className='option'>
+                                <label htmlFor="size">Size:</label>
+                                <input id="size" type="text" />
+                            </div>
+                            <div className='option'>
+                                <label htmlFor="flavor">Flavor:</label>
+                                <input id="flavor" type="text" />
+                            </div>
+                            <div className='option'>
+                                <label htmlFor="add-ons">Add Ons:</label>
+                                <input id="add-ons" type="text" />
+                            </div>
                         </div>
                     </div>
                     {/* Quantity and Add to Cart */}
                     <div className='ek-product-add-to-cart'>
                         <div className='cart-wrapper'>
-                            <select>
-
-                            </select>
-                            <button>Add to Cart</button>
-                            <button>Save for Later</button>
+                            <p>Quantity:</p>
+                            <div className='quantity-wrapper'>
+                                <button>-</button>
+                                <input defaultValue={1} />
+                                <button>+</button>
+                            </div>
+                            <button className='add-to-cart-btn'>Add to Cart</button>
+                            <button className='save-for-later-btn'>Save for Later</button>
                         </div>
                     </div>
                 </div>
@@ -146,6 +159,7 @@ function EnigmaKitchen() {
                     <h4>lorem</h4>
                     <h4>lorem</h4>
                 </div>
+                <Footer />
             </div>
         </>
     )
