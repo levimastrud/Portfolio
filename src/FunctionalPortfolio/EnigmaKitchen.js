@@ -4,9 +4,98 @@ import AccountIcon from '../assets/EnigmaKitchen/account.svg'
 import CartIcon from '../assets/EnigmaKitchen/cart.svg'
 import SearchIcon from '../assets/EnigmaKitchen/search.svg'
 import Footer from '../Footer';
+import ImageZoom from './ImageZoom';
+import { useEffect, useState } from 'react';
+import products from './EnigmaProducts';
+import ReactStars from "react-rating-stars-component";
+
+
 
 
 function EnigmaKitchen() {
+
+    // Selecting random product
+
+    const [selectedProduct, setSelectedProduct] = useState(products[0]);
+
+    const [selectedImage, setSelectedImage] = useState(selectedProduct.images[0].src);
+
+    const [price, setPrice] = useState(selectedProduct.price);
+
+    // Handling option change
+
+    const [selectedOptions, setSelectedOptions] = useState({});
+
+    const handleOptionChange = (event, variantType) => {
+        const selectedOption = event.target.value;
+        setSelectedOptions((prevSelectedOptions) => ({
+            ...prevSelectedOptions,
+            [variantType]: selectedOption,
+        }));
+
+        const variant = selectedProduct.variants.find(
+            (variant) => variant.type === variantType
+        );
+        const option = variant.options.find(
+            (option) => option.name === selectedOption
+        );
+
+        if (option) {
+            setPrice((prevPrice) => prevPrice + option.priceAdjustment);
+        }
+    };
+
+    // Handling quantity
+
+    let [quantity, setQuantity] = useState(1);
+
+    const decreaseQuantity = () => {
+        if (quantity > 1) {
+            setQuantity(quantity - 1)
+        }
+    }
+
+    // Selecting random products
+
+    const [similarProducts, setSimilarProducts] = useState([]);
+    const [alsoBoughtProducts, setAlsoBoughtProducts] = useState([]);
+
+    useEffect(() => {
+
+        const copyOfProducts = [...products];
+
+        const selectedProductIndex = copyOfProducts.findIndex(
+            (product) => product.id === selectedProduct.id
+        );
+
+        if (selectedProductIndex !== -1) {
+            copyOfProducts.splice(selectedProductIndex, 1);
+        }
+
+        const randomItems = [];
+
+        while (randomItems.length < 8 && copyOfProducts.length > 0) {
+            const randomIndex = Math.floor(Math.random() * copyOfProducts.length);
+            const [selectedItem] = copyOfProducts.splice(randomIndex, 1);
+            randomItems.push(selectedItem);
+        }
+
+        // Split the random items into two arrays
+        const halfLength = Math.ceil(randomItems.length / 2);
+        const similarProducts = randomItems.slice(0, halfLength);
+        const alsoBoughtProducts = randomItems.slice(halfLength);
+
+        setSimilarProducts(similarProducts);
+        setAlsoBoughtProducts(alsoBoughtProducts);
+    }, [products, selectedProduct]);
+
+    // Stars
+
+    const starReview = {
+        size: 30,
+        edit: false,
+        activeColor: '#27b9ad',
+    };
 
     return (
         <>
@@ -36,48 +125,74 @@ function EnigmaKitchen() {
                 <div className='ek-product-wrapper'>
                     {/* Product Images */}
                     <div className='ek-product-image-wrapper'>
-                        <h6 className='breadcrumbs' >Lorem | Lorem | Lorem | Lorem</h6>
+                        <h6 className='breadcrumbs'>
+                            <span>Home</span>
+                            {selectedProduct.breadcrumbs.map((breadcrumb, index) => (
+                                <span key={index + 1}>
+                                    {' | '}
+                                    {breadcrumb}
+                                </span>
+                            ))}
+                        </h6>
                         <div className='ek-product-images'>
-                            <img className='main-image' src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80' />
+                            <ImageZoom
+                                className='main-image'
+                                src={selectedImage}
+                            />
                             <div className='sub-images'>
-                                <img src='https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=749&q=80' />
-                                <img src='https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80' />
-                                <img src='https://plus.unsplash.com/premium_photo-1664360228046-a0a7ccf4fb38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80' />
-                                <img src='https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=722&q=80' />
-                                <img src='https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80' />
+                                {selectedProduct.images.map((image, index) => (
+                                    <img
+                                        key={index}
+                                        src={image.src}
+                                        alt={image.alt}
+                                        onClick={() => {
+                                            setSelectedImage(image.src)
+                                        }}
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
                     {/* Product Info and Options */}
                     <div className='ek-product-information'>
-                        <h1 className='product-title'>Product Title</h1>
-                        <p className='product-brief-description'>Lorem Lorem Lorem Lorem LoremLorem Lorem LoremLorem</p>
-                        <p>Reviews</p>
+                        <h1 className='product-title'>{selectedProduct.name}</h1>
+                        <p className='product-brief-description'>{selectedProduct.briefDescription}</p>
+                        <p>{selectedProduct.overallRating}</p>
                         <p>Price:</p>
-                        <h4>$40.00 - $50.00</h4>
-                        <div className='product-options'>
-                            <div className='option'>
-                                <label htmlFor="size">Size:</label>
-                                <input id="size" type="text" />
-                            </div>
-                            <div className='option'>
-                                <label htmlFor="flavor">Flavor:</label>
-                                <input id="flavor" type="text" />
-                            </div>
-                            <div className='option'>
-                                <label htmlFor="add-ons">Add Ons:</label>
-                                <input id="add-ons" type="text" />
-                            </div>
-                        </div>
+                        <h4>{price}</h4>
+                        {
+                            selectedProduct.variants.map((variant, variantIndex) => (
+                                <div className='option' key={`variant-${variantIndex}`}>
+                                    <label htmlFor={variant.type}>{variant.type}:</label>
+                                    <div>
+                                        {variant.options.map((option, optionIndex) => (
+                                            <div key={`option-${optionIndex}`}>
+                                                <label htmlFor={option.name}>
+                                                    <input
+                                                        id={option.name}
+                                                        type="radio"
+                                                        name={variant.type}
+                                                        value={option.name}
+                                                        onChange={(event) => handleOptionChange(event, variant.type)}
+                                                    />
+                                                    {option.name}
+                                                </label>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))
+                        }
+
                     </div>
                     {/* Quantity and Add to Cart */}
                     <div className='ek-product-add-to-cart'>
                         <div className='cart-wrapper'>
                             <p>Quantity:</p>
                             <div className='quantity-wrapper'>
-                                <button>-</button>
-                                <input defaultValue={1} />
-                                <button>+</button>
+                                <button onClick={() => decreaseQuantity()}>-</button>
+                                <input onChange={(e) => setQuantity(Number(e.target.value))} value={quantity} />
+                                <button onClick={() => setQuantity(quantity + 1)}>+</button>
                             </div>
                             <button className='add-to-cart-btn'>Add to Cart</button>
                             <button className='save-for-later-btn'>Save for Later</button>
@@ -87,10 +202,10 @@ function EnigmaKitchen() {
                 {/* More Information */}
                 <div className='ek-more-information-block'>
                     <div className='tab-wrapper'>
-                        <button>Tab1</button>
-                        <button>Tab2</button>
-                        <button>Tab3</button>
-                        <button>Tab4</button>
+                        <button>Description</button>
+                        <button>Reviews</button>
+                        <button>FAQ</button>
+                        <button>Instructions</button>
                     </div>
                     <div className='ek-more-information-wrapper'>
                         <p>
@@ -102,26 +217,40 @@ function EnigmaKitchen() {
                 <div className='ek-similar-products-block'>
                     <h5 className='ek-block-title'>More Like This</h5>
                     <div className='ek-more-products-wrapper'>
-                        <button>Left</button>
-                        <div className='product'></div>
-                        <div className='product'></div>
-                        <div className='product'></div>
-                        <div className='product'></div>
-                        <button>right</button>
+                        {similarProducts.map((item) => (
+                            <div className='product' onClick={() => {
+                                setSelectedProduct(products[item.id - 1])
+                                setSelectedImage(products[item.id - 1].images[0].src)
+                            }} key={item.id}>
+                                {/* Render the product details */}
+                                <img src={item.images[0].src} />
+                                <h6>{item.name}</h6>
+                                <ReactStars value={item.overallRating} {...starReview} />
+                            </div>
+                        ))}
                     </div>
                 </div>
+
+
                 {/* Customers also Bought */}
                 <div className='ek-also-bought-block'>
                     <h5 className='ek-block-title'>Customers also Bought</h5>
                     <div className='ek-more-products-wrapper'>
-                        <button>Left</button>
-                        <div className='product'></div>
-                        <div className='product'></div>
-                        <div className='product'></div>
-                        <div className='product'></div>
-                        <button>right</button>
+                        {alsoBoughtProducts.map((item) => (
+                            <div className='product' onClick={() => {
+                                setSelectedProduct(products[item.id - 1])
+                                setSelectedImage(products[item.id - 1].images[0].src)
+                            }} key={item.id}>
+                                {/* Render the product details */}
+                                <img src={item.images[0].src} />
+                                <h6>{item.name}</h6>
+                                <p>{item.overallRating}</p>
+                                <ReactStars value={item.overallRating} {...starReview} />
+                            </div>
+                        ))}
                     </div>
                 </div>
+
                 {/* Newsletter */}
                 <div className='ek-newsletter-block'>
                     <h3>Join the Enigma Club.</h3>

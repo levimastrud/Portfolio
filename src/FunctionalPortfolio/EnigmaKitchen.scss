@@ -136,7 +136,7 @@
 
 .sub-images {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .sub-images img {
@@ -145,6 +145,7 @@
     object-fit: cover;
     border: 1px solid var(--ek-dark);
     padding: .5em;
+    margin: 0 2em;
 }
 
 .ek-product-information {
@@ -277,7 +278,17 @@ body .product-brief-description {
 .ek-more-products-wrapper .product {
     height: 20em;
     width: 15%;
-    background-color: var(--ek-accent);
+    // background-color: var(--ek-accent);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.ek-more-products-wrapper .product img {
+    width: 80%;
+    height: auto;
     border-radius: 10px;
 }
 
