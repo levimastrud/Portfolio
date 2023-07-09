@@ -124,7 +124,10 @@ function EnigmaKitchen() {
     }
 
     const handleAddToCart = () => {
-        setTotalPrice(price + (price * quantity));
+
+        setTotalPrice(prevTotalPrice => prevTotalPrice + price * quantity);
+
+
         const updatedCart = [...cart];
         const existingItemIndex = updatedCart.findIndex((item) => item.id === selectedProduct.id);
 
@@ -330,6 +333,7 @@ function EnigmaKitchen() {
                                 {/* Render the product details */}
                                 <img src={item.images[0].src} />
                                 <h6>{item.name}</h6>
+                                <p>${item.price}</p>
                                 <ReactStars value={item.overallRating} {...starReview} />
                             </div>
                         ))}
@@ -350,7 +354,7 @@ function EnigmaKitchen() {
                                 {/* Render the product details */}
                                 <img src={item.images[0].src} />
                                 <h6>{item.name}</h6>
-                                <p>{item.overallRating}</p>
+                                <p>${item.price}</p>
                                 <ReactStars value={item.overallRating} {...starReview} />
                             </div>
                         ))}

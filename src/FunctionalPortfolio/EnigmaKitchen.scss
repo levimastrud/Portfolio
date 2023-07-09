@@ -153,6 +153,10 @@
     }
 }
 
+.ek-cart:hover {
+    cursor: pointer;
+}
+
 .cart-and-account-wrapper img {
     height: 3em;
     margin: 0 1em;
@@ -366,7 +370,7 @@ input[type='radio']:checked:after {
     padding: 2em;
     position: sticky;
     // right: 0;
-    top: 30%;
+    top: 10%;
     // height: 3em;
     width: 70%;
     // box-shadow: 0 0 20px rgba(209, 209, 209, 0.411);
