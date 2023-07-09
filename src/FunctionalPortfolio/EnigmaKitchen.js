@@ -8,7 +8,10 @@ import ImageZoom from './ImageZoom';
 import { useEffect, useState } from 'react';
 import products from './EnigmaProducts';
 import ReactStars from "react-rating-stars-component";
-
+import facebook from '../assets/EnigmaKitchen/tg-fb-01.svg'
+import instagram from '../assets/EnigmaKitchen/tg-instagram-01.svg'
+import youtube from '../assets/EnigmaKitchen/tg-youtube-01.svg'
+import tiktok from '../assets/EnigmaKitchen/tg-tik-tok-01.svg'
 
 
 
@@ -17,10 +20,10 @@ function EnigmaKitchen() {
     // Selecting random product
 
     const [selectedProduct, setSelectedProduct] = useState(products[0]);
-
     const [selectedImage, setSelectedImage] = useState(selectedProduct.images[0].src);
 
     const [price, setPrice] = useState(selectedProduct.price);
+    const [totalPrice, setTotalPrice] = useState(null);
 
     // Handling option change
 
@@ -97,22 +100,91 @@ function EnigmaKitchen() {
         activeColor: '#27b9ad',
     };
 
+    // Tabs
+
+    const [activeTab, setActiveTab] = useState('description')
+
+    // Cart
+
+    const [isCartModalVisible, setCartModalVisible] = useState(false);
+
+    const handleCartClick = () => {
+        if (isCartModalVisible) {
+            setCartModalVisible(false);
+        } else {
+            setCartModalVisible(true);
+        }
+    };
+
+    const [cart, setCart] = useState([]);
+
+    const emptyCart = () => {
+        setTotalPrice(null);
+        setCart([]);
+    }
+
+    const handleAddToCart = () => {
+        setTotalPrice(price + (price * quantity));
+        const updatedCart = [...cart];
+        const existingItemIndex = updatedCart.findIndex((item) => item.id === selectedProduct.id);
+
+        if (existingItemIndex !== -1) {
+            // Item already exists in the cart, update the quantity
+            updatedCart[existingItemIndex].quantity += quantity;
+        } else {
+            // Item doesn't exist in the cart, add it as a new item
+            updatedCart.push({
+                id: selectedProduct.id,
+                name: selectedProduct.name,
+                quantity: quantity,
+            });
+        }
+
+        setCart(updatedCart);
+    };
+
+
     return (
         <>
             <div className='ek-wrapper'>
+                {/* Cart */}
+                {isCartModalVisible && (
+                    <div className='cart-modal'>
+                        <button className='close-cart-btn' onClick={() => setCartModalVisible(false)}>X</button>
+                        {/* Modal content */}
+                        {cart.map((item) => (
+                            <div className='cart-modal-item' key={item.id}>
+                                <h6>{item.name}</h6>
+                                <p>x{item.quantity}</p>
+                                {/* Add additional item details if needed */}
+                            </div>
+                        ))}
+                        {
+                            totalPrice > 0 ?
+                                <div className='total-modal-wrapper'>
+                                    <p>Total:</p>
+                                    <p className='total-cart-modal'>{totalPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
+                                </div> : ''
+                        }
+                        <button onClick={() => emptyCart()} className='checkout-btn'>Checkout</button>
+                        <button onClick={() => emptyCart()} className='empty-cart'>Empty Cart</button>
+                    </div>
+                )}
+                {/* Nav */}
                 <nav className='ek-nav'>
                     <div className='main-nav-wrapper'>
                         <img src={EnigmaKitchenLogo} className='ek-logo' />
-                        <div className='search-wrapper'>
+                        <div className='search-wrapper mobile-hide'>
                             <input placeholder='Search...' className='ek-search'></input>
                             <button className='search-button'><img src={SearchIcon} /></button>
                         </div>
                         <div className='cart-and-account-wrapper'>
-                            <img className='ek-cart' src={CartIcon} />
-                            <img className='ek-account' src={AccountIcon} />
+                            <img
+                                onClick={() => handleCartClick()} className='ek-cart' src={CartIcon} />
+                            <img className='ek-account mobile-hide' src={AccountIcon} />
                         </div>
                     </div>
-                    <nav className='sub-nav'>
+                    <nav className='sub-nav mobile-hide'>
                         <a href=''>All</a>
                         <a href=''>Today's Deals</a>
                         <a href=''>Entrees</a>
@@ -129,7 +201,7 @@ function EnigmaKitchen() {
                             <span>Home</span>
                             {selectedProduct.breadcrumbs.map((breadcrumb, index) => (
                                 <span key={index + 1}>
-                                    {' | '}
+                                    {' > '}
                                     {breadcrumb}
                                 </span>
                             ))}
@@ -156,14 +228,14 @@ function EnigmaKitchen() {
                     {/* Product Info and Options */}
                     <div className='ek-product-information'>
                         <h1 className='product-title'>{selectedProduct.name}</h1>
+                        <ReactStars value={selectedProduct.overallRating} {...starReview} />
                         <p className='product-brief-description'>{selectedProduct.briefDescription}</p>
-                        <p>{selectedProduct.overallRating}</p>
                         <p>Price:</p>
-                        <h4>{price}</h4>
+                        <h4 className='display-price'>{price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h4>
                         {
                             selectedProduct.variants.map((variant, variantIndex) => (
                                 <div className='option' key={`variant-${variantIndex}`}>
-                                    <label htmlFor={variant.type}>{variant.type}:</label>
+                                    <label className='type-label' htmlFor={variant.type}>{variant.type}:</label>
                                     <div>
                                         {variant.options.map((option, optionIndex) => (
                                             <div key={`option-${optionIndex}`}>
@@ -171,6 +243,7 @@ function EnigmaKitchen() {
                                                     <input
                                                         id={option.name}
                                                         type="radio"
+                                                        className='radio-btn'
                                                         name={variant.type}
                                                         value={option.name}
                                                         onChange={(event) => handleOptionChange(event, variant.type)}
@@ -190,11 +263,18 @@ function EnigmaKitchen() {
                         <div className='cart-wrapper'>
                             <p>Quantity:</p>
                             <div className='quantity-wrapper'>
-                                <button onClick={() => decreaseQuantity()}>-</button>
-                                <input onChange={(e) => setQuantity(Number(e.target.value))} value={quantity} />
-                                <button onClick={() => setQuantity(quantity + 1)}>+</button>
+                                <button onClick={() => {
+                                    decreaseQuantity()
+                                }}>-</button>
+                                <input onChange={(e) => {
+                                    setQuantity(Number(e.target.value));
+                                }} value={quantity} />
+                                <button onClick={() => {
+                                    setQuantity(quantity + 1)
+                                }}>+</button>
                             </div>
-                            <button className='add-to-cart-btn'>Add to Cart</button>
+                            <p className='total-price'>Total price: ${price * quantity}</p>
+                            <button onClick={() => handleAddToCart()} className='add-to-cart-btn'>Add to Cart</button>
                             <button className='save-for-later-btn'>Save for Later</button>
                         </div>
                     </div>
@@ -202,15 +282,39 @@ function EnigmaKitchen() {
                 {/* More Information */}
                 <div className='ek-more-information-block'>
                     <div className='tab-wrapper'>
-                        <button>Description</button>
-                        <button>Reviews</button>
-                        <button>FAQ</button>
-                        <button>Instructions</button>
+                        <button className={`tab-button ${activeTab === 'description' ? 'active' : ''}`} onClick={() => setActiveTab('description')}>Description</button>
+                        <button className={`tab-button ${activeTab === 'reviews' ? 'active' : ''}`} onClick={() => setActiveTab('reviews')}>Reviews</button>
+                        <button className={`tab-button ${activeTab === 'faq' ? 'active' : ''}`} onClick={() => setActiveTab('faq')}>FAQ</button>
+                        <button className={`tab-button ${activeTab === 'instructions' ? 'active' : ''}`} onClick={() => setActiveTab('instructions')}>Instructions</button>
                     </div>
                     <div className='ek-more-information-wrapper'>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                        {activeTab === 'description' && (
+                            <p>{selectedProduct.description}</p>
+                        )}
+                        {activeTab === 'reviews' && (
+                            <div className='reviews-section'>
+                                {selectedProduct.reviews.map((review, index) => (
+                                    <div className='review-item' key={index}>
+                                        <ReactStars value={review.rating} {...starReview} />
+                                        <p><strong>{review.customer}</strong></p>
+                                        <p>{review.text}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                        {activeTab === 'faq' && (
+                            <div className='faq-section'>
+                                {selectedProduct.faq.map((item, index) => (
+                                    <div className='faq-item' key={index}>
+                                        <h6 className='faq-question'>{item.question}</h6>
+                                        <p>{item.answer}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                        {activeTab === 'instructions' && (
+                            <p>{selectedProduct.instructions}</p>
+                        )}
                     </div>
                 </div>
                 {/* Similar Products */}
@@ -221,6 +325,7 @@ function EnigmaKitchen() {
                             <div className='product' onClick={() => {
                                 setSelectedProduct(products[item.id - 1])
                                 setSelectedImage(products[item.id - 1].images[0].src)
+                                setActiveTab('description');
                             }} key={item.id}>
                                 {/* Render the product details */}
                                 <img src={item.images[0].src} />
@@ -240,6 +345,7 @@ function EnigmaKitchen() {
                             <div className='product' onClick={() => {
                                 setSelectedProduct(products[item.id - 1])
                                 setSelectedImage(products[item.id - 1].images[0].src)
+                                setActiveTab('description');
                             }} key={item.id}>
                                 {/* Render the product details */}
                                 <img src={item.images[0].src} />
@@ -256,38 +362,50 @@ function EnigmaKitchen() {
                     <h3>Join the Enigma Club.</h3>
                     <button> Sign up for Free</button>
                 </div>
-                {/* Footer */}
                 <div className='ek-footer-block'>
                     <footer className='ek-footer'>
                         <div className='ek-connect'>
-                            <p>Let's Connect</p>
+                            <p><strong>Let's Connect</strong></p>
+                            <div className='about-social-links enigma'>
+                                <img src={youtube} alt='YouTube' />
+                                <img src={facebook} alt='Facebook' />
+                                <img src={instagram} alt='Instagram' />
+                                <img src={tiktok} alt='TikTok' />
+                            </div>
                         </div>
-                        <ul>
-                            <li>Products</li>
-                            <li>Products</li>
-                            <li>Products</li>
-                            <li>Products</li>
-                        </ul>
-                        <ul>
-                            <li>Collection</li>
-                            <li>Collection</li>
-                            <li>Collection</li>
-                            <li>Collection</li>
-                        </ul>
-                        <ul>
-                            <li>Other</li>
-                            <li>Other</li>
-                            <li>Other</li>
-                            <li>Other</li>
-                        </ul>
+                        <div>
+                            <ul>
+                                <li>Menu</li>
+                                <li>Specials</li>
+                                <li>Events</li>
+                                <li>Gift Cards</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Signature Dishes</li>
+                                <li>Unique Drinks</li>
+                                <li>Enigma Delights</li>
+                                <li>Sweet Treats</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>About Us</li>
+                                <li>Contact Us</li>
+                                <li>Privacy Policy</li>
+                                <li>Terms of Service</li>
+                            </ul>
+                        </div>
                     </footer>
                 </div>
+
                 {/* Notices */}
-                <div className='ek-notice-block'>
+                {/* <div className='ek-notice-block'>
                     <h4>lorem</h4>
                     <h4>lorem</h4>
                     <h4>lorem</h4>
-                </div>
+                </div> */}
                 <Footer />
             </div>
         </>

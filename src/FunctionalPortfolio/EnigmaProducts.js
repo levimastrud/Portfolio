@@ -87,56 +87,46 @@ const products = [
             { src: choc3, alt: 'Habanero Chocolate' },
         ],
         name: 'Habanero Chocolate',
-        price: 100,
-        breadcrumbs: ['Menu', 'Food', 'Entrees'],
-        briefDescription: 'Discover the amazing world of spicy chocolate',
-        overallRating: 4.5,
-        description: `Experience a delightful fusion of heat and sweetness with our Fiery Habanero Infused Dark Chocolate. This uniquely enticing chocolate bar blends the rich, smooth flavors of high-quality dark chocolate with a spicy kick from real habanero peppers.
-
-        Made from sustainably sourced cocoa, this gourmet chocolate offers a full-bodied, deeply satisfying chocolate experience that's elevated by a dash of habanero heat. Each bite starts with a sweet and smooth sensation on the palate, followed by a surprising fiery note that leaves a pleasantly warm aftertaste.
-        
-        Perfect for adventurous foodies, this chocolate bar isn't just a treat; it's a flavor journey that takes you from the comfort of familiar sweetness to the excitement of a spicy, exotic experience. Enjoy it as a bold snack, use it to create interesting desserts, or gift it to the chili or chocolate lover in your life.
-        
-        Prepare for a taste sensation that's as daring as it is delicious with our Fiery Habanero Infused Dark Chocolate. Order yours today and add a bit of spice to your life!`,
+        price: 9.99,
+        breadcrumbs: ['Home', 'Shop', 'Food', 'Chocolate'],
+        briefDescription: 'Experience the perfect blend of heat and sweetness with our Habanero Chocolate.',
+        overallRating: 4.2,
+        description: `Indulge in the tantalizing fusion of rich dark chocolate and fiery habanero peppers with our Habanero Chocolate. Crafted with the finest sustainably sourced cocoa beans, this gourmet chocolate delivers a harmonious balance of intense flavors.
+      
+          Each bite starts with the smooth, velvety texture of premium dark chocolate, awakening your taste buds to its luxurious richness. As the chocolate melts, the heat of the habanero peppers slowly emerges, creating a symphony of flavors that dances on your palate.
+      
+          Our Habanero Chocolate is perfect for adventurous food lovers seeking a unique and thrilling taste experience. Enjoy it as a standalone treat, pair it with a glass of red wine for a sophisticated combination, or surprise someone special with a gift that is sure to ignite their senses.
+      
+          Embrace the extraordinary and savor the boldness of our Habanero Chocolate. Order now and embark on a culinary journey that will leave you craving for more.`,
         faq: [
-            { question: 'Question', answer: 'answer' },
-            { question: 'Question', answer: 'answer' },
-            { question: 'Question', answer: 'answer' },
-            { question: 'Question', answer: 'answer' },
+            { question: 'Is this chocolate suitable for vegans?', answer: 'Yes, our Habanero Chocolate is vegan-friendly.' },
+            { question: 'Does it contain any allergens?', answer: 'Our Habanero Chocolate may contain traces of nuts.' },
+            { question: 'What is the shelf life of this chocolate?', answer: 'The shelf life is approximately 12 months from the manufacturing date.' },
         ],
         reviews: [
-            { rating: 5, customer: 'Mike B', text: 'This product is good' },
-            { rating: 5, customer: 'Mike B', text: 'This product is good' },
-            { rating: 5, customer: 'Mike B', text: 'This product is good' },
-            { rating: 5, customer: 'Mike B', text: 'This product is good' },
+            { rating: 5, customer: 'Jane D.', text: 'Absolutely loved the combination of chocolate and spice. It was a delightful treat!' },
+            { rating: 4, customer: 'Mark S.', text: 'The habanero kick was pleasantly surprising. It added an exciting twist to the chocolate.' },
+            { rating: 3, customer: 'Sarah L.', text: 'I expected a bit more heat, but overall, it was a unique chocolate experience.' },
         ],
-        instructions: 'Contains nuts.',
+        instructions: 'Store in a cool, dry place. Avoid direct sunlight.',
         variants: [
             {
                 type: 'Size',
                 options: [
                     { name: 'Small', priceAdjustment: 0 },
-                    { name: 'Medium', priceAdjustment: 10 },
-                    { name: 'Large', priceAdjustment: 20 },
-                ]
+                    { name: 'Medium', priceAdjustment: 2.99 },
+                    { name: 'Large', priceAdjustment: 5.99 },
+                ],
             },
             {
-                type: 'Color',
+                type: 'Spiciness Level',
                 options: [
-                    { name: 'Red', priceAdjustment: 0 },
-                    { name: 'Orange', priceAdjustment: 10 },
-                    { name: 'Solid Gold', priceAdjustment: 500 },
-                ]
+                    { name: 'Mild', priceAdjustment: 0 },
+                    { name: 'Hot', priceAdjustment: 8.99 },
+                    { name: 'Inferno', priceAdjustment: 1.99 },
+                ],
             },
-            {
-                type: 'Add Ons',
-                options: [
-                    { name: 'Seaweed', priceAdjustment: 0 },
-                    { name: 'Skittles', priceAdjustment: 10 },
-                    { name: 'Chocolate', priceAdjustment: 5 },
-                ]
-            },
-        ]
+        ],
     },
     {
         id: 2,
@@ -172,7 +162,14 @@ const products = [
                     { name: 'Medium', priceAdjustment: 5 },
                     { name: 'Large', priceAdjustment: 10 },
                 ]
-            }
+            },
+            {
+                type: 'Size',
+                options: [
+                    { name: 'Pulp', priceAdjustment: 1 },
+                    { name: 'No-Pulp', priceAdjustment: 0 },
+                ]
+            },
         ]
     },
     {
@@ -602,7 +599,16 @@ const products = [
             { rating: 3, customer: 'Emma W', text: `They definitely taste like pickles, but I'm still not sure if that's a good thing.` },
         ],
         instructions: 'Store in a cool, dry place. Consume within 6 months of opening.',
-        variants: []
+        variants: [
+            {
+                type: 'Sourness Level',
+                options: [
+                    { name: 'Baby-mode', priceAdjustment: 0 },
+                    { name: 'Average', priceAdjustment: 0 },
+                    { name: 'Put me out of my misery', priceAdjustment: 10 },
+                ]
+            },
+        ]
     },
     {
         id: 16,
@@ -666,7 +672,16 @@ const products = [
             { rating: 4, customer: 'Sandy C', text: `I didn't think a burger could be this good underwater.A tasty treat indeed!` },
         ],
         instructions: 'Best enjoyed fresh and served with a side of Krusty Krab fries. May induce spontaneous jellyfishing.',
-        variants: []
+        variants: [
+            {
+                type: 'Alcohol Level',
+                options: [
+                    { name: 'Non-Alcoholic', priceAdjustment: 0 },
+                    { name: 'Alcoholic', priceAdjustment: 0 },
+                    { name: 'AA Meeting', priceAdjustment: 10 },
+                ]
+            },
+        ]
     },
     {
         id: 18,
@@ -708,7 +723,7 @@ const products = [
             { src: jug3, alt: 'Juggernog' },
         ],
         name: 'Juggernog',
-        price: 15,
+        price: 2500,
         breadcrumbs: ['Menu', 'Call of Duty', 'Drinks'],
         briefDescription: 'Boost your resilience with the legendary Juggernog beverage',
         overallRating: 4.6,
@@ -730,7 +745,19 @@ const products = [
             { rating: 4, customer: 'Sarah K', text: 'The taste is fantastic, and the energy kick is real. Juggernog keeps me in the game and ready for action.' },
         ],
         instructions: 'Serve chilled for maximum effect. Limit consumption to one bottle per day.',
-        variants: []
+        variants: [
+            {
+                type: 'Add Ons',
+                options: [
+                    { name: 'None', priceAdjustment: 0 },
+                    { name: 'Quick Revive', priceAdjustment: 1500 },
+                    { name: 'Speed Cola', priceAdjustment: 3000 },
+                    { name: 'Mule Kick', priceAdjustment: 4000 },
+                    { name: `Widow's Wine`, priceAdjustment: 4000 },
+                    { name: `Double Tap`, priceAdjustment: 2000 },
+                ]
+            },
+        ]
     },
     {
         id: 20,
@@ -763,7 +790,7 @@ const products = [
         ],
         instructions: 'Serve warm for the best experience. Enjoy with a side of Seussian rhymes.',
         variants: []
-    } 
+    }
 ];
 
 export default products;
