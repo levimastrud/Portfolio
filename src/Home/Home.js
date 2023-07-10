@@ -4,6 +4,7 @@ import ModelViewer from '../model';
 import linkedInIcon from '../assets/linkedIn.svg'
 import mailIcon from '../assets/mailIcon.svg'
 import twitterIcon from '../assets/twitterIcon.svg'
+import gitHubIcon from '../assets/github-icon.svg'
 import logoIcon from '../assets/logo-icon-01.svg'
 // Sounds
 import ah from '../assets/Sounds/ah.mp3'
@@ -111,6 +112,9 @@ function Home() {
           </a>
           <a className='social-link' target='_blank' href='/https://twitter.com/levimas_'>
             <img alt='twitter icon' src={twitterIcon} />
+          </a>
+          <a className='social-link' target='_blank' href='https://github.com/levimastrud'>
+            <img alt='github icon' src={gitHubIcon} />
           </a>
         </div>
         <footer className='copyright'>
