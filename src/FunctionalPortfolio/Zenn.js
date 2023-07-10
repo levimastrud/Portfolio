@@ -19,7 +19,7 @@ function Zenn() {
     const [slideOutNaturally, setslideOutNaturally] = useState(false);
 
     const learnMore = () => {
-        setSlideOut(true);
+        console.log('hi')
     };
 
     return (

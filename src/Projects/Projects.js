@@ -60,6 +60,11 @@ function Projects() {
             <div className='projects-and-description-wrapper' style={{ gridTemplateColumns }}>
                 <div className='project-container'>
 
+                    <img alt='project' onClick={() => learnAboutProject(project4)} className={`project-image ${selectedProject === project4.title ? 'selected' : ''}`} src={project4.image} />
+                    <h3 className={`title-text mobile ${selectedProject === project4.title ? 'selected' : ''}`}>{activeTitle}</h3>
+                    <p className={`description-text mobile ${selectedProject === project4.title ? 'selected' : ''}`}>{activeDescription}</p>
+                    <Link className={`use-project-btn mobile ${selectedProject === project4.title ? 'selected' : ''}`} to={activeHref}>Check it Out</Link>
+
                     <img alt='project' onClick={() => learnAboutProject(project1)} className={`project-image ${selectedProject === project1.title ? 'selected' : ''}`} src={project1.image} />
                     <h3 className={`title-text mobile ${selectedProject === project1.title ? 'selected' : ''}`}>{activeTitle}</h3>
                     <p className={`description-text mobile ${selectedProject === project1.title ? 'selected' : ''}`}>{activeDescription}</p>
@@ -74,11 +79,6 @@ function Projects() {
                     <h3 className={`title-text mobile ${selectedProject === project3.title ? 'selected' : ''}`}>{activeTitle}</h3>
                     <p className={`description-text mobile ${selectedProject === project3.title ? 'selected' : ''}`}>{activeDescription}</p>
                     <Link className={`use-project-btn mobile ${selectedProject === project3.title ? 'selected' : ''}`} to={activeHref}>Check it Out</Link>
-
-                    <img alt='project' onClick={() => learnAboutProject(project4)} className={`project-image ${selectedProject === project4.title ? 'selected' : ''}`} src={project4.image} />
-                    <h3 className={`title-text mobile ${selectedProject === project4.title ? 'selected' : ''}`}>{activeTitle}</h3>
-                    <p className={`description-text mobile ${selectedProject === project4.title ? 'selected' : ''}`}>{activeDescription}</p>
-                    <Link className={`use-project-btn mobile ${selectedProject === project4.title ? 'selected' : ''}`} to={activeHref}>Check it Out</Link>
 
                 </div>
                 <div className='description-container'>
