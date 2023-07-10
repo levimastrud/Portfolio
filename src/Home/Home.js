@@ -1,4 +1,4 @@
-import './Home.css'
+import './Home.scss'
 import { useState, useRef } from 'react';
 import ModelViewer from '../model';
 import linkedInIcon from '../assets/linkedIn.svg'

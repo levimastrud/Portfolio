@@ -170,7 +170,7 @@ img {
     text-decoration: none;
     padding: 1em;
     position: fixed;
-    bottom: 3em;
+    bottom: 1.5em;
     font-size: 1.5em;
     text-align: center;
     border: 2px solid transparent;
@@ -230,6 +230,11 @@ img {
 .description-text.mobile,
 .title-text.mobile {
     display: none;
+}
+
+.use-project-btn.mobile.selected {
+    display: block;
+    visibility: visible;
 }
 
 .title-text.mobile.selected {
