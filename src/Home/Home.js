@@ -80,28 +80,17 @@ function Home() {
     audioRef.current.play(); // Play the sound
   };
 
-  const [isLoading, setIsLoading] = useState(true);
-  const [isModelLoaded, setIsModelLoaded] = useState(false);
+  // Adjusting volume
 
   useEffect(() => {
-    // Simulating the model loading process with a timeout
-    const loadingTimeout = setTimeout(() => {
-      setIsModelLoaded(true);
-      setIsLoading(false);
-    }, 2000); // Adjust the duration as needed
-
-    // Clean up the timeout if the component unmounts
-    return () => clearTimeout(loadingTimeout);
+    if (audioRef.current) {
+      audioRef.current.volume = 0.25;
+    }
   }, []);
-
 
   return (
     <div className='home-wrapper'>
-      {isLoading ? (
-        <img className='loading-icon' src='https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif'/>
-      ) : isModelLoaded ? (
-        <ModelViewer />
-      ) : null}
+      <ModelViewer />
       {/* Rest of the component */}
       <audio ref={audioRef}>
         <source src={chosenSound} type="audio/mp3" />
