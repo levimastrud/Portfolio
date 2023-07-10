@@ -85,7 +85,7 @@ function Home() {
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.25;
+      audioRef.current.volume = 0.05;
     }
   }, []);
 
@@ -104,14 +104,11 @@ function Home() {
           <h3>Developer</h3>
         </div>
         <div className="social-link-wrapper">
-          <a className='social-link' target='_blank' href='/https://www.linkedin.com/in/levimastrud/'>
+          <a className='social-link' target='_blank' href='https://www.linkedin.com/in/levimastrud/'>
             <img alt='linkedIn icon' src={linkedInIcon} />
           </a>
           <a className='social-link' href='/'>
             <img alt='email icon' src={mailIcon} />
-          </a>
-          <a className='social-link' target='_blank' href='/https://twitter.com/levimas_'>
-            <img alt='twitter icon' src={twitterIcon} />
           </a>
           <a className='social-link' target='_blank' href='https://github.com/levimastrud'>
             <img alt='github icon' src={gitHubIcon} />

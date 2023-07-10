@@ -674,11 +674,13 @@ const products = [
         instructions: 'Best enjoyed fresh and served with a side of Krusty Krab fries. May induce spontaneous jellyfishing.',
         variants: [
             {
-                type: 'Alcohol Level',
+                type: 'How would you like it cooked?',
                 options: [
-                    { name: 'Non-Alcoholic', priceAdjustment: 0 },
-                    { name: 'Alcoholic', priceAdjustment: 0 },
-                    { name: 'AA Meeting', priceAdjustment: 10 },
+                    { name: 'Rare', priceAdjustment: 0 },
+                    { name: 'Medium-Rare', priceAdjustment: 0 },
+                    { name: 'Medium', priceAdjustment: 0 },
+                    { name: 'Well-Done', priceAdjustment: 0 },
+                    { name: 'With Sprinkles', priceAdjustment: 10 },
                 ]
             },
         ]
