@@ -18,18 +18,21 @@ import tiktok from '../assets/EnigmaKitchen/tg-tik-tok-01.svg'
 function EnigmaKitchen() {
 
     // Nav Hide
-
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [isScrollingUp, setIsScrollingUp] = useState(false);
 
     useEffect(() => {
+
         const handleScroll = () => {
             const currentScrollPos = window.pageYOffset;
+            const screenWidth = window.innerWidth;
 
-            if (currentScrollPos > prevScrollPos && !isScrollingUp) {
-                setIsScrollingUp(true);
-            } else if (currentScrollPos < prevScrollPos && isScrollingUp) {
-                setIsScrollingUp(false);
+            if (screenWidth > 768) { // Adjust the screen width threshold as needed
+                if (currentScrollPos > prevScrollPos && !isScrollingUp) {
+                    setIsScrollingUp(true);
+                } else if (currentScrollPos < prevScrollPos && isScrollingUp) {
+                    setIsScrollingUp(false);
+                }
             }
 
             setPrevScrollPos(currentScrollPos);
@@ -362,6 +365,7 @@ function EnigmaKitchen() {
                                 setSelectedProduct(products[item.id - 1])
                                 setSelectedImage(products[item.id - 1].images[0].src)
                                 setActiveTab('description');
+                                window.scrollTo(0, 0);
                             }} key={item.id}>
                                 {/* Render the product details */}
                                 <img src={item.images[0].src} />
@@ -383,6 +387,7 @@ function EnigmaKitchen() {
                                 setSelectedProduct(products[item.id - 1])
                                 setSelectedImage(products[item.id - 1].images[0].src)
                                 setActiveTab('description');
+                                window.scrollTo(0, 0);
                             }} key={item.id}>
                                 {/* Render the product details */}
                                 <img src={item.images[0].src} />
