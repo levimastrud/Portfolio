@@ -69,7 +69,6 @@
 
 .cart-modal {
     position: fixed;
-    width: 50%;
     background-color: var(--ek-light);
     z-index: 9900;
     border: 2px solid var(--ek-accent);
@@ -86,6 +85,7 @@
     @media screen and (max-width: 980px) {
         right: 1em;
         top: 10em;
+        width: 50%;
     }
 }
 
