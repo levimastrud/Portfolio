@@ -7,14 +7,30 @@ function Projects() {
     let project1 = {
         title: 'ZENN',
         image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80',
-        description: 'Introducing "EcoLife: Sustainable Urban Living," a visionary project revolutionizing cities with eco-conscious design, advanced technology, and community engagement. By integrating green infrastructure, renewable energy systems, and smart technology, EcoLife creates a harmonious coexistence between nature and urban life. It inspires residents through workshops and events, educating them about sustainable practices. Welcome to the future of vibrant, eco-friendly urban living.',
+        description: `ZENN is a conceptual high-tech sleep-aid project designed to provide users with a unique sleep experience and deep insights into their sleep health. Developed using React and CSS, this project showcases my skills in front-end development and design.
+
+        The primary goal of ZENN is to offer users a cutting-edge solution for improving their sleep quality. While not a real product, ZENN combines sleek and modern design elements inspired by the aesthetics of the iPhone, creating an immersive and visually appealing user experience.
+        
+        Through its intuitive interface, ZENN goes beyond traditional sleep aids by offering users a comprehensive understanding of their sleep patterns and health. Although the product is conceptual, it aims to provide users with valuable insights into optimizing their sleep routines and achieving restful nights.
+        
+        By leveraging React and CSS, ZENN delivers a seamless and interactive user interface, allowing users to explore various features and functionalities. The project demonstrates my proficiency in building responsive and engaging web applications.
+        
+        ZENN is a testament to my ability to merge technology and design to create a compelling user experience. Although it is not a real product, it serves as a showcase of my skills in front-end development and highlights my attention to detail in crafting visually appealing interfaces.`,
         href: '/zenn'
     }
 
     let project2 = {
         title: 'TicketGo',
         image: 'https://images.unsplash.com/photo-1634848860108-6d8368f5a0b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80',
-        description: 'Introducing "InnoTech Solutions: Empowering Innovation for a Better Tomorrow." This transformative project is dedicated to driving innovation and fostering technological advancements that address pressing global challenges. InnoTech Solutions brings together brilliant minds, cutting-edge research, and industry collaboration to unlock breakthrough solutions. By nurturing a vibrant ecosystem of inventors, entrepreneurs, and investors, it sparks creativity and accelerates the development of game-changing technologies. From sustainable energy solutions to healthcare innovations, InnoTech Solutions is at the forefront of shaping a brighter future. Join us as we empower innovation and pave the way for a better tomorrow.',
+        description: `The purpose of TicketGo is to offer users a convenient platform for discovering and booking tickets to various events. With its intuitive interface, users can easily browse available seats, view event details, and secure their desired tickets. The project emphasizes a sleek and modern design, creating an engaging and visually appealing experience.
+
+        Key features of TicketGo include the ability to view and book available seats for events. By leveraging React and CSS, the project delivers a responsive and interactive interface that enhances the user journey. Users can navigate through different event options, select their preferred seats, and complete their booking with ease.
+        
+        TicketGo stands out by providing a slick and intuitive event service that simplifies the ticket booking process. The bright and friendly design theme, featuring vibrant blue and orange elements, enhances the overall visual appeal and reinforces the user-friendly nature of the platform.
+        
+        TicketGo offers a showcase of my skills in front-end development and design, highlighting my ability to create engaging interfaces and seamless user experiences. With its emphasis on simplicity and functionality, TicketGo demonstrates my dedication to delivering exceptional user-centered design in the context of event ticketing.
+        
+        Please note that TicketGo is a fictional project created for my portfolio, emphasizing my design and development capabilities in the realm of ticketing and event services.`,
         href: '/ticketgo'
     }
 
@@ -28,7 +44,17 @@ function Projects() {
     let project4 = {
         title: 'Enigma Kitchen',
         image: 'https://images.unsplash.com/photo-1627637819794-fba32f82be16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80',
-        description: 'This ambitious endeavor aims to create a collaborative platform where diverse disciplines converge, fostering groundbreaking ideas and driving innovation to new heights. Project Nexus brings together experts, researchers, and entrepreneurs from various fields, enabling cross-pollination of knowledge and expertise. By encouraging interdisciplinary collaboration, the project sparks the creation of novel solutions to complex global challenges. Through workshops, conferences, and shared spaces, Project Nexus provides a fertile ground for innovation to thrive. Join us as we forge meaningful connections, empower ideas, and shape a future where collective intelligence leads to transformative advancements. Welcome to the nexus of innovation and limitless possibilities.',
+        description: `Enigma Kitchen is an imaginative online food service that caters to individuals seeking unique and intriguing culinary experiences. Developed using React and CSS, this project serves as a testament to my skills in front-end development and design.
+
+        Enigma Kitchen sets itself apart by offering a curated selection of unusual and interesting foods, candies, and drinks. The platform provides users with an opportunity to explore a variety of fantastical products that go beyond the ordinary. With its intuitive interface, users can easily navigate through the available options, add items to their cart, and customize their selections with responsive product variants and options.
+        
+        Noteworthy features of Enigma Kitchen include its extensive product catalog, seamless shopping experience, and the ability to add items to the cart for convenient checkout. By offering fantastical and unique products, Enigma Kitchen aims to delight and surprise users, providing them with a memorable and enjoyable online food shopping adventure.
+        
+        Enigma Kitchen also incorporates an innovative aspect by utilizing an AI called MidJourney to create all the product photos. This AI-driven approach enhances the visual representation of the products, allowing users to have a realistic and immersive shopping experience.
+        
+        Drawing inspiration from the whimsical world of Willy Wonka, Enigma Kitchen incorporates a vibrant color scheme featuring shades of red, green, and gray. This design choice adds a touch of magic and playfulness to the overall user experience, creating an engaging and visually captivating atmosphere.
+        
+        Enigma Kitchen stands out as a project where meticulous attention was given to detail and functionality. With a focus on user experience and a visually appealing design, this project showcases my dedication and passion for creating immersive and engaging interfaces. Enigma Kitchen holds a special place in my portfolio as it represents the culmination of significant time and effort dedicated to its development.`,
         href: '/enigma-kitchen'
     }
 
