@@ -17,6 +17,32 @@ import tiktok from '../assets/EnigmaKitchen/tg-tik-tok-01.svg'
 
 function EnigmaKitchen() {
 
+    // Nav Hide
+
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [isScrollingUp, setIsScrollingUp] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+
+            if (currentScrollPos > prevScrollPos && !isScrollingUp) {
+                setIsScrollingUp(true);
+            } else if (currentScrollPos < prevScrollPos && isScrollingUp) {
+                setIsScrollingUp(false);
+            }
+
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [prevScrollPos, isScrollingUp]);
+
+
     // Selecting random product
 
     const [selectedProduct, setSelectedProduct] = useState(products[0]);
@@ -100,6 +126,13 @@ function EnigmaKitchen() {
         activeColor: '#27b9ad',
     };
 
+    const tabStarReview = {
+        size: 30,
+        edit: false,
+        activeColor: '#f2fbfb',
+    };
+
+
     // Tabs
 
     const [activeTab, setActiveTab] = useState('description')
@@ -174,7 +207,7 @@ function EnigmaKitchen() {
                     </div>
                 )}
                 {/* Nav */}
-                <nav className='ek-nav'>
+                <nav className={`ek-nav ${isScrollingUp ? "scroll-up" : ""}`}>
                     <div className='main-nav-wrapper'>
                         <img src={EnigmaKitchenLogo} className='ek-logo' />
                         <div className='search-wrapper mobile-hide'>
@@ -298,8 +331,8 @@ function EnigmaKitchen() {
                             <div className='reviews-section'>
                                 {selectedProduct.reviews.map((review, index) => (
                                     <div className='review-item' key={index}>
-                                        <ReactStars value={review.rating} {...starReview} />
-                                        <p><strong>{review.customer}</strong></p>
+                                        <ReactStars value={review.rating} {...tabStarReview} />
+                                        <p className='customer-review'><strong>{review.customer}</strong></p>
                                         <p>{review.text}</p>
                                     </div>
                                 ))}

@@ -88,7 +88,7 @@ const products = [
         ],
         name: 'Habanero Chocolate',
         price: 9.99,
-        breadcrumbs: ['Home', 'Shop', 'Food', 'Chocolate'],
+        breadcrumbs: ['Shop', 'Food', 'Chocolate'],
         briefDescription: 'Experience the perfect blend of heat and sweetness with our Habanero Chocolate.',
         overallRating: 4.2,
         description: `Indulge in the tantalizing fusion of rich dark chocolate and fiery habanero peppers with our Habanero Chocolate. Crafted with the finest sustainably sourced cocoa beans, this gourmet chocolate delivers a harmonious balance of intense flavors.

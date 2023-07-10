@@ -1,5 +1,5 @@
 import './Home.scss'
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import ModelViewer from '../model';
 import linkedInIcon from '../assets/linkedIn.svg'
 import mailIcon from '../assets/mailIcon.svg'
@@ -80,9 +80,29 @@ function Home() {
     audioRef.current.play(); // Play the sound
   };
 
+  const [isLoading, setIsLoading] = useState(true);
+  const [isModelLoaded, setIsModelLoaded] = useState(false);
+
+  useEffect(() => {
+    // Simulating the model loading process with a timeout
+    const loadingTimeout = setTimeout(() => {
+      setIsModelLoaded(true);
+      setIsLoading(false);
+    }, 2000); // Adjust the duration as needed
+
+    // Clean up the timeout if the component unmounts
+    return () => clearTimeout(loadingTimeout);
+  }, []);
+
+
   return (
     <div className='home-wrapper'>
-      <ModelViewer />
+      {isLoading ? (
+        <img className='loading-icon' src='https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif'/>
+      ) : isModelLoaded ? (
+        <ModelViewer />
+      ) : null}
+      {/* Rest of the component */}
       <audio ref={audioRef}>
         <source src={chosenSound} type="audio/mp3" />
       </audio>
@@ -98,7 +118,7 @@ function Home() {
             <img alt='linkedIn icon' src={linkedInIcon} />
           </a>
           <a className='social-link' href='/'>
-            <img  alt='email icon' src={mailIcon} />
+            <img alt='email icon' src={mailIcon} />
           </a>
           <a className='social-link' target='_blank' href='/https://twitter.com/levimas_'>
             <img alt='twitter icon' src={twitterIcon} />
