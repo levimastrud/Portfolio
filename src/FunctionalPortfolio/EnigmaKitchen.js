@@ -17,6 +17,10 @@ import tiktok from '../assets/EnigmaKitchen/tg-tik-tok-01.svg'
 
 function EnigmaKitchen() {
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+    
     // Nav Hide
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [isScrollingUp, setIsScrollingUp] = useState(false);

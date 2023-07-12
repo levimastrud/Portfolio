@@ -1,5 +1,5 @@
 import './Zenn.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import wave1 from '../assets/Zenn/wave1-01.svg'
 import wave2 from '../assets/Zenn/wave2-01.svg'
 import zennArrow from '../assets/Zenn/zenn-button.svg'
@@ -9,10 +9,21 @@ import shippingIcon from '../assets/Zenn/shipping-icon.svg'
 import downArrow from '../assets/Zenn/down-arrow-01.svg'
 import man from '../assets/Zenn/man.png'
 import personSleeping from '../assets/Zenn/personsleeping.png'
+// Product Photos
+import zennBig from '../assets/Zenn/zenn-big.png'
+import zennBasic from '../assets/Zenn/zenn-p1.png'
+import zennP5 from '../assets/Zenn/zenn-p5.png'
+import zennP6 from '../assets/Zenn/zenn-p6.png'
+import zennP7 from '../assets/Zenn/zenn-p7.png'
 // Other Pages
 import Footer from '../Footer';
+import ZennLogo from '../assets/Zenn/zennLogo.svg'
 
 function Zenn() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const [slideOutSmarter, setslideOutSmarter] = useState(false);
     const [slideOutSecret, setslideOutSecret] = useState(false);
@@ -26,9 +37,10 @@ function Zenn() {
         <>
             <div className='zenn-wrapper'>
                 <div className='zenn-landing-wrapper'>
-                    <h1 className='zenn-title'>ZENN</h1>
+                    {/* <h1 className='zenn-title'>ZENN</h1> */}
+                    <img className='zenn-title' src={ZennLogo}/>
                     <h4 className='zenn-tagline'>Reconnect with Restful Nights</h4>
-                    <img className='zenn-landing-image' src='https://www.insight.com/content/dam/insight-web/en_US/store/apple/apple-watch-family-fall22.png' />
+                    <img className='zenn-landing-image' src={zennBig} />
                     <div className='zenn-button-wrapper'>
                         <a className='zenn-shop-now' href='#zenn-product-block'>Shop Now</a>
                         <a className='zenn-learn-more' href='#zenn-information-block'>Learn More <img className='down-arrow' src={downArrow} /></a>
@@ -39,7 +51,7 @@ function Zenn() {
                     <div className='zenn-information-block' id='zenn-information-block'>
                         <div className='block sleep-smarter'>
                             <h4 className='zenn-gradient-text'>Sleep<br />Smarter.</h4>
-                            <img className='information-image' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPLV3ref_VW_PF+watch-44-alum-starlight-nc-se_VW_PF_WF_SI?wid=2000&hei=2000&fmt=png-alpha&.v=1683237043713' />
+                            <img className='information-image' src={zennP6} />
                             <div className={`reveal-slide ${slideOutSmarter ? 'slide-out' : ''}`}>
                                 <h3>lorem lorem lorem</h3>
                             </div>
@@ -71,30 +83,30 @@ function Zenn() {
                     </div>
                     <div className='zenn-product-wrapper'>
                         <div className='zenn-product'>
-                            <img src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPLV3ref_VW_PF+watch-44-alum-starlight-nc-se_VW_PF_WF_SI?wid=2000&hei=2000&fmt=png-alpha&.v=1683237043713' />
+                            <img src={zennBasic} />
                             <h5 className='product-name'>ZENN Mini</h5>
-                            <p className='product-description'>Tried and true</p>
+                            <p className='product-description'>Compact and Portable Solution</p>
                             <h5 className='product-price'>$149</h5>
                             <button className='zenn-buy-button'>Buy</button>
                         </div>
                         <div className='zenn-product'>
-                            <img src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPLV3ref_VW_PF+watch-44-alum-starlight-nc-se_VW_PF_WF_SI?wid=2000&hei=2000&fmt=png-alpha&.v=1683237043713' />
+                            <img src={zennP5} />
                             <h5 className='product-name'>ZENN Lite</h5>
-                            <p className='product-description'>Tried and true</p>
+                            <p className='product-description'>Essential Features at Great Value</p>
                             <h5 className='product-price'>$199</h5>
                             <button className='zenn-buy-button'>Buy</button>
                         </div>
                         <div className='zenn-product'>
-                            <img src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPLV3ref_VW_PF+watch-44-alum-starlight-nc-se_VW_PF_WF_SI?wid=2000&hei=2000&fmt=png-alpha&.v=1683237043713' />
+                            <img src={zennP6} />
                             <h5 className='product-name'>ZENN Standard</h5>
-                            <p className='product-description'>Tried and true</p>
+                            <p className='product-description'>Versatile Performance for Everyday</p>
                             <h5 className='product-price'>$299</h5>
                             <button className='zenn-buy-button'>Buy</button>
                         </div>
                         <div className='zenn-product'>
-                            <img src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPLV3ref_VW_PF+watch-44-alum-starlight-nc-se_VW_PF_WF_SI?wid=2000&hei=2000&fmt=png-alpha&.v=1683237043713' />
+                            <img src={zennP7} />
                             <h5 className='product-name'>ZENN Pro</h5>
-                            <p className='product-description'>Tried and true</p>
+                            <p className='product-description'>Advanced Features for Professionals</p>
                             <h5 className='product-price'>$399</h5>
                             <button className='zenn-buy-button'>Buy</button>
                         </div>

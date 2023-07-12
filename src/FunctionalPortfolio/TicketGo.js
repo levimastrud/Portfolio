@@ -1,5 +1,5 @@
 import './TicketGo.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ticketGoLogo from '../assets/TicketGo/ticketGoLogo.svg'
 import bell from '../assets/TicketGo/bell.svg'
 import Footer from '../Footer'
@@ -12,6 +12,10 @@ import downArrowGray from '../assets/TicketGo/down-arrow-gray-01.svg'
 
 
 function TicketGo() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const events = [
         {
