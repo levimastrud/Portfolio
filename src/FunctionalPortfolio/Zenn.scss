@@ -43,8 +43,8 @@ button {
 
 .zenn-tagline {
     color: var(--zenn-main);
-    font-style: italic;
     margin: 0;
+    font-weight: 100;
 }
 
 .zenn-landing-wrapper {
@@ -69,7 +69,7 @@ button {
 .zenn-button-wrapper a {
     color: white;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.25em;
     margin: 0 2em;
     transition: all .2s ease-in-out;
 
@@ -106,14 +106,13 @@ button {
 }
 
 .zenn-landing-image {
-    width: 40%;
+    width: 20%;
     height: auto;
-    margin: -2em 0;
+    margin: 2em 0;
 
     @media screen and (max-width: 980px) {
         // position: absolute;
-        width: 100%;
-        margin: 0;
+        width: 80%;
     }
 }
 
@@ -371,6 +370,9 @@ button {
 .product-name {
     font-size: 2em;
     margin: 1em 0;
+    font-family: 'Hubballi', sans-serif;
+    letter-spacing: .1em;
+    text-transform: uppercase;
 
     @media screen and (max-width: 980px) {
         font-size: 1em;
@@ -470,6 +472,9 @@ button {
 
 .zenn-perk h4 {
     font-size: 2em;
+    font-family: 'Hubballi', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .15em;
     margin-top: 0;
 
     @media screen and (max-width: 980px) {
@@ -479,7 +484,7 @@ button {
 
 .zenn-perk p {
     opacity: 50%;
-    font-size: 1.5em;
+    font-size: 1.15em;
 
     @media screen and (max-width: 980px) {
         font-size: .8em;
