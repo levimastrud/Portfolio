@@ -1,5 +1,5 @@
 import './Zenn.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import wave1 from '../assets/Zenn/wave1-01.svg'
 import wave2 from '../assets/Zenn/wave2-01.svg'
 import zennArrow from '../assets/Zenn/zenn-button.svg'
@@ -11,7 +11,7 @@ import man from '../assets/Zenn/man.png'
 import personSleeping from '../assets/Zenn/personsleeping.png'
 // Other Pages
 import Footer from '../Footer';
-import { useEffect } from 'react';
+import ZennLogo from '../assets/Zenn/zennLogo.svg'
 
 function Zenn() {
 
@@ -31,7 +31,8 @@ function Zenn() {
         <>
             <div className='zenn-wrapper'>
                 <div className='zenn-landing-wrapper'>
-                    <h1 className='zenn-title'>ZENN</h1>
+                    {/* <h1 className='zenn-title'>ZENN</h1> */}
+                    <img className='zenn-title' src={ZennLogo}/>
                     <h4 className='zenn-tagline'>Reconnect with Restful Nights</h4>
                     <img className='zenn-landing-image' src='https://www.insight.com/content/dam/insight-web/en_US/store/apple/apple-watch-family-fall22.png' />
                     <div className='zenn-button-wrapper'>

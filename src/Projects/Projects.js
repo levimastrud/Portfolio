@@ -1,12 +1,15 @@
 import '../Projects/Projects.scss'
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import zennThumbnail from '../assets/Zenn/zenn.svg'
+import enigmaThumbnail from '../assets/EnigmaKitchen/enigma.svg'
+import ticketGoThumbnail from '../assets/TicketGo/ticketGo.svg'
 
 function Projects() {
 
     let project1 = {
         title: 'ZENN',
-        image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80',
+        image: zennThumbnail,
         description: `ZENN is a conceptual high-tech sleep-aid project designed to provide users with a unique sleep experience and deep insights into their sleep health. Developed using React and CSS, this project showcases my skills in front-end development and design.
 
         The primary goal of ZENN is to offer users a cutting-edge solution for improving their sleep quality. While not a real product, ZENN combines sleek and modern design elements inspired by the aesthetics of the iPhone, creating an immersive and visually appealing user experience.
@@ -21,7 +24,7 @@ function Projects() {
 
     let project2 = {
         title: 'TicketGo',
-        image: 'https://images.unsplash.com/photo-1634848860108-6d8368f5a0b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80',
+        image: ticketGoThumbnail,
         description: `The purpose of TicketGo is to offer users a convenient platform for discovering and booking tickets to various events. With its intuitive interface, users can easily browse available seats, view event details, and secure their desired tickets. The project emphasizes a sleek and modern design, creating an engaging and visually appealing experience.
 
         Key features of TicketGo include the ability to view and book available seats for events. By leveraging React and CSS, the project delivers a responsive and interactive interface that enhances the user journey. Users can navigate through different event options, select their preferred seats, and complete their booking with ease.
@@ -43,7 +46,7 @@ function Projects() {
 
     let project4 = {
         title: 'Enigma Kitchen',
-        image: 'https://images.unsplash.com/photo-1627637819794-fba32f82be16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80',
+        image: enigmaThumbnail,
         description: `Enigma Kitchen is an imaginative online food service that caters to individuals seeking unique and intriguing culinary experiences. Developed using React and CSS, this project serves as a testament to my skills in front-end development and design.
 
         Enigma Kitchen sets itself apart by offering a curated selection of unusual and interesting foods, candies, and drinks. The platform provides users with an opportunity to explore a variety of fantastical products that go beyond the ordinary. With its intuitive interface, users can easily navigate through the available options, add items to their cart, and customize their selections with responsive product variants and options.
@@ -101,10 +104,10 @@ function Projects() {
                     <p className={`description-text mobile ${selectedProject === project2.title ? 'selected' : ''}`}>{activeDescription}</p>
                     <Link className={`use-project-btn mobile ${selectedProject === project2.title ? 'selected' : ''}`} to={activeHref}>Check it Out</Link>
 
-                    <img alt='project' onClick={() => learnAboutProject(project3)} className={`project-image ${selectedProject === project3.title ? 'selected' : ''}`} src={project3.image} />
+                    {/* <img alt='project' onClick={() => learnAboutProject(project3)} className={`project-image ${selectedProject === project3.title ? 'selected' : ''}`} src={project3.image} />
                     <h3 className={`title-text mobile ${selectedProject === project3.title ? 'selected' : ''}`}>{activeTitle}</h3>
                     <p className={`description-text mobile ${selectedProject === project3.title ? 'selected' : ''}`}>{activeDescription}</p>
-                    <Link className={`use-project-btn mobile ${selectedProject === project3.title ? 'selected' : ''}`} to={activeHref}>Check it Out</Link>
+                    <Link className={`use-project-btn mobile ${selectedProject === project3.title ? 'selected' : ''}`} to={activeHref}>Check it Out</Link> */}
 
                 </div>
                 <div className='description-container'>
