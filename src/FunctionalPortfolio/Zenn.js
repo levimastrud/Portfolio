@@ -11,8 +11,13 @@ import man from '../assets/Zenn/man.png'
 import personSleeping from '../assets/Zenn/personsleeping.png'
 // Other Pages
 import Footer from '../Footer';
+import { useEffect } from 'react';
 
 function Zenn() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const [slideOutSmarter, setslideOutSmarter] = useState(false);
     const [slideOutSecret, setslideOutSecret] = useState(false);
