@@ -72,6 +72,8 @@ img {
     color: rgba(255, 255, 255, 0.5);
     padding: 3.5em 1em 1em 1em;
     font-family: Quicksand;
+    white-space: pre-line;
+
 
     @media screen and (max-width: 1050px) {
         font-size: 1em;

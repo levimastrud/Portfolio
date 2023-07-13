@@ -43,24 +43,22 @@ function Projects() {
         description: 'This visionary project is dedicated to transforming urban spaces into thriving green oases, promoting biodiversity, and enhancing the well-being of communities. Green Horizons combines landscape architecture, ecological principles, and community engagement to create sustainable and aesthetically pleasing environments. From rooftop gardens to urban forests, every space is thoughtfully designed to maximize greenery, reduce carbon footprint, and improve air quality. Through partnerships with local organizations and educational programs, Green Horizons empowers residents to actively participate in the preservation and cultivation of these green landscapes. Experience the beauty of sustainable living and embrace the green horizons that await in our cities.',
         href: '/forged-in-isolation'
     }
-
     let project4 = {
         title: 'Enigma Kitchen',
         image: enigmaThumbnail,
         description: `Enigma Kitchen is an imaginative online food service that caters to individuals seeking unique and intriguing culinary experiences. Developed using React and CSS, this project serves as a testament to my skills in front-end development and design.
-
-        Enigma Kitchen sets itself apart by offering a curated selection of unusual and interesting foods, candies, and drinks. The platform provides users with an opportunity to explore a variety of fantastical products that go beyond the ordinary. With its intuitive interface, users can easily navigate through the available options, add items to their cart, and customize their selections with responsive product variants and options.
-        
-        Noteworthy features of Enigma Kitchen include its extensive product catalog, seamless shopping experience, and the ability to add items to the cart for convenient checkout. By offering fantastical and unique products, Enigma Kitchen aims to delight and surprise users, providing them with a memorable and enjoyable online food shopping adventure.
-        
-        Enigma Kitchen also incorporates an innovative aspect by utilizing an AI called MidJourney to create all the product photos. This AI-driven approach enhances the visual representation of the products, allowing users to have a realistic and immersive shopping experience.
-        
-        Drawing inspiration from the whimsical world of Willy Wonka, Enigma Kitchen incorporates a vibrant color scheme featuring shades of red, green, and gray. This design choice adds a touch of magic and playfulness to the overall user experience, creating an engaging and visually captivating atmosphere.
-        
-        Enigma Kitchen stands out as a project where meticulous attention was given to detail and functionality. With a focus on user experience and a visually appealing design, this project showcases my dedication and passion for creating immersive and engaging interfaces. Enigma Kitchen holds a special place in my portfolio as it represents the culmination of significant time and effort dedicated to its development.`,
+    
+    Enigma Kitchen sets itself apart by offering a curated selection of unusual and interesting foods, candies, and drinks. The platform provides users with an opportunity to explore a variety of fantastical products that go beyond the ordinary. With its intuitive interface, users can easily navigate through the available options, add items to their cart, and customize their selections with responsive product variants and options.
+    
+    Noteworthy features of Enigma Kitchen include its extensive product catalog, seamless shopping experience, and the ability to add items to the cart for convenient checkout. By offering fantastical and unique products, Enigma Kitchen aims to delight and surprise users, providing them with a memorable and enjoyable online food shopping adventure.
+    
+    Enigma Kitchen also incorporates an innovative aspect by utilizing an AI called MidJourney to create all the product photos. This AI-driven approach enhances the visual representation of the products, allowing users to have a realistic and immersive shopping experience.
+    
+    Drawing inspiration from the whimsical world of Willy Wonka, Enigma Kitchen incorporates a vibrant color scheme featuring shades of red, green, and gray. This design choice adds a touch of magic and playfulness to the overall user experience, creating an engaging and visually captivating atmosphere.
+    
+    Enigma Kitchen stands out as a project where meticulous attention was given to detail and functionality. With a focus on user experience and a visually appealing design, this project showcases my dedication and passion for creating immersive and engaging interfaces. Enigma Kitchen holds a special place in my portfolio as it represents the culmination of significant time and effort dedicated to its development.`,
         href: '/enigma-kitchen'
-    }
-
+    };
     const [gridTemplateColumns, setGridTemplateColumns] = useState('100% 0%');
     const [activeTitle, setActiveTitle] = useState('');
     const [activeDescription, setActiveDescription] = useState('');

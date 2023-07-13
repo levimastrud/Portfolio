@@ -107,7 +107,7 @@ function Home() {
           <a className='social-link' target='_blank' href='https://www.linkedin.com/in/levimastrud/'>
             <img alt='linkedIn icon' src={linkedInIcon} />
           </a>
-          <a className='social-link' href='/'>
+          <a className='social-link' href="mailto:levimastrud@gmail.com">
             <img alt='email icon' src={mailIcon} />
           </a>
           <a className='social-link' target='_blank' href='https://github.com/levimastrud'>
