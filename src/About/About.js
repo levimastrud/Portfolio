@@ -3,11 +3,13 @@ import levi from '../assets/levi.png'
 import linkedInIcon from '../assets/linkedIn.svg'
 import mailIcon from '../assets/mailIcon.svg'
 import twitterIcon from '../assets/twitterIcon.svg'
+import gitHubIcon from '../assets/github-icon.svg'
 import htmlIcon from '../assets/LanguageIcons/html-icon-01.svg'
 import cssIcon from '../assets/LanguageIcons/css-icon-01.svg'
 import jsIcon from '../assets/LanguageIcons/js-icon-01.svg'
 import pythonIcon from '../assets/LanguageIcons/python-icon-01.svg'
 import csharpIcon from '../assets/LanguageIcons/c-sharp-icon-01.svg'
+
 
 function About() {
     return (
@@ -18,14 +20,14 @@ function About() {
                     <h3>Levi<br />Mastrud</h3>
                     <h6>Fargo, North Dakota</h6>
                     <div className="social-link-wrapper about">
-                        <a className='social-link' target='_blank' href='/https://www.linkedin.com/in/levimastrud/'>
+                        <a className='social-link' target='_blank' href='https://www.linkedin.com/in/levimastrud/'>
                             <img alt='linkedIn icon' src={linkedInIcon} />
                         </a>
-                        <a className='social-link' href='/'>
+                        <a className='social-link' href="mailto:levimastrud@gmail.com">
                             <img alt='email icon' src={mailIcon} />
                         </a>
-                        <a className='social-link' target='_blank' href='/https://twitter.com/levimas_'>
-                            <img alt='twitter icon' src={twitterIcon} />
+                        <a className='social-link' target='_blank' href='https://github.com/levimastrud'>
+                            <img alt='github icon' src={gitHubIcon} />
                         </a>
                     </div>
                 </div>
